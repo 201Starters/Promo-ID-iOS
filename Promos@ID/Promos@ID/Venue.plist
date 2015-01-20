@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Mall</key>
+	<dict>
+		<key>Mall Kelapa Gading</key>
+		<array>
+			<string>Mall Kelapa Gading</string>
+			<string>Jakarta Utara</string>
+			<string>mall_kelapa_gading.png</string>
+		</array>
+		<key>Pondok Indah Mall</key>
+		<array>
+			<string>Pondok Indah Mall</string>
+			<string>Jakarta Selatan</string>
+			<string>pondok_indah_mall.png</string>
+		</array>
+		<key>Grand Indonesia</key>
+		<array>
+			<string>Grand Indonesia Shopping Town</string>
+			<string>Jakarta Pusat</string>
+			<string>grand_indonesia.png</string>
+		</array>
+	</dict>
+</dict>
+</plist>
