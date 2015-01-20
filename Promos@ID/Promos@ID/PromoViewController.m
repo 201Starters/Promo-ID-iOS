@@ -24,7 +24,7 @@
     
     // Initiate PageView
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
-    NSString *recommendedPromoTitle = [NSString stringWithFormat:@"Recommended Promo %@",self.userLocationString];
+    NSString *recommendedPromoTitle = [NSString stringWithFormat:@"Recommended Promo \n%@",self.userLocationString];
     
     self.pageTitles = @[recommendedPromoTitle,@"Featured Promo",@"Ending Promo"];
     
