@@ -17,6 +17,24 @@
 @synthesize location;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"HasLaunchedOnce"])
+    {
+        
+        // app already launched
+    }
+    else
+    {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasLaunchedOnce"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"prainstall" bundle:[NSBundle mainBundle]];
+        UIViewController *vc =[storyboard instantiateInitialViewController];
+        // Set root view controller and make windows visible
+        self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+        self.window.rootViewController = vc;
+        [self.window makeKeyAndVisible];
+        // This is the first launch ever
+    }
+    
     // Override point for customization after application launch.
     UIPageControl *pageControl = [UIPageControl appearance];
     pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
