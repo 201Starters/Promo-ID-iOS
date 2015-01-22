@@ -26,7 +26,7 @@
     {
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasLaunchedOnce"];
         [[NSUserDefaults standardUserDefaults] synchronize];
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"prainstall" bundle:[NSBundle mainBundle]];
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"prainstall_2" bundle:[NSBundle mainBundle]];
         UIViewController *vc =[storyboard instantiateInitialViewController];
         // Set root view controller and make windows visible
         self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];

@@ -193,7 +193,7 @@
         }
     }
     
-    sizeFit = CGSizeMake(self.frame.size.width*0.78, previousFrame.origin.y + previousFrame.size.height + self.bottomMargin + 1.0f);
+    sizeFit = CGSizeMake(self.frame.size.width*0.72, previousFrame.origin.y + previousFrame.size.height + self.bottomMargin + 1.0f);
     self.contentSize = sizeFit;
 }
 

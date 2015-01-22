@@ -14,7 +14,7 @@
     NSMutableArray *arrayinterest;
 }
 
-@property (nonatomic, strong) NSMutableArray        *array;
+@property (nonatomic, strong) NSMutableArray        *arraytag;
 @property (nonatomic, strong) IBOutlet DWTagList    *tagList;
 
 

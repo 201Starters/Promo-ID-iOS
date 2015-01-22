@@ -1,26 +1,21 @@
 //
-//  QuestionInterestNAV.m
+//  QuestionBrand.m
 //  Promos@ID
 //
 //  Created by reza hadafi on 1/21/15.
 //  Copyright (c) 2015 Farandi Kusumo. All rights reserved.
 //
 
-#import "QuestionInterestNAV.h"
+#import "QuestionBrand.h"
 
-@interface QuestionInterestNAV ()
+@interface QuestionBrand ()
 
 @end
 
-@implementation QuestionInterestNAV
+@implementation QuestionBrand
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
-    /*UIImage *navBarBackgroundImage = [UIImage imageNamed:@"titlebackground.png"];
-    [[UINavigationBar appearance] setBackgroundImage:navBarBackgroundImage forBarMetrics:UIBarMetricsDefault];*/
-    self.navigationBar.translucent = YES;
-    self.navigationBar.TintColor=[UIColor whiteColor];
     // Do any additional setup after loading the view.
 }
 
@@ -28,7 +23,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 /*
 #pragma mark - Navigation

@@ -10,7 +10,7 @@
 #import "UIImage+ImageEffects.h"
 
 @interface QuestionInterest ()
-@property (nonatomic) UIImage *image;
+@property (nonatomic) UIImage *imagebackground;
 
 @end
 
@@ -19,8 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     arrayinterest = [[NSMutableArray alloc] init];
-    UIImage *image = [UIImage imageNamed:@"title.png"];
-    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:image];
+    UIImage *imagetitle = [UIImage imageNamed:@"title.png"];
+    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:imagetitle];
     
     
     UIButton* nextButton = [UIButton buttonWithType:101]; // left-pointing shape!
@@ -32,21 +32,19 @@
     
     
     UIImageView * ViewBackgroundImage=[[UIImageView alloc] initWithFrame:self.view.frame];
-    self.image = [UIImage imageNamed:@"background1.png"];
+    self.imagebackground = [UIImage imageNamed:@"background1.png"];
     UIImage *effectImage = nil;
-    effectImage = [self.image applyDarkEffect];
+    effectImage = [self.imagebackground applyDarkEffect];
     ViewBackgroundImage.image = effectImage;
-    //self.view.backgroundColor=[UIColor colorWithPatternImage:self.image];
     [self.view insertSubview:ViewBackgroundImage atIndex:0];
-    //[self.view sendSubviewToBack:ViewBackgroundImage];
-    _array = [[NSMutableArray alloc] initWithObjects:@"Foo",
+    _arraytag = [[NSMutableArray alloc] initWithObjects:@"Foo",
               @"Tag Label",
               @"Tag Label",
               @"Tag",
               @"Tag Label",
               @"Long long long long long long Tag", nil];
     [_tagList setAutomaticResize:YES];
-    [_tagList setTags:_array];
+    [_tagList setTags:_arraytag];
     [_tagList setTagDelegate:self];
     [_tagList setCornerRadius:4.0f];
     [_tagList setTextColor:[UIColor whiteColor]];
@@ -56,7 +54,6 @@
 -(IBAction)nextAction{
     
     NSLog(@"isi array= %d",arrayinterest.count);
-    //[arrayinterest addObject:@"string1"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -77,8 +74,6 @@
                                           cancelButtonTitle:@"Ok"
                                           otherButtonTitles:nil];
     [alert show];
-    //UIColor*colorcheck=[_tagList viewWithTag:tagIndex].backgroundColor;
-    
 }
 
 
