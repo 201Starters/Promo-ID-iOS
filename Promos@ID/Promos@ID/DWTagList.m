@@ -7,6 +7,7 @@
 
 #import "DWTagList.h"
 #import <QuartzCore/QuartzCore.h>
+#import "PageContentViewController.h"
 
 #define CORNER_RADIUS 10.0f
 #define LABEL_MARGIN_DEFAULT 5.0f
@@ -78,9 +79,10 @@
     return self;
 }
 
-- (void)setTags:(NSArray *)array
+- (void)setTags:(NSArray *)array:(NSArray *)userarray
 {
     textArray = [[NSArray alloc] initWithArray:array];
+    _usertextArray = [[NSArray alloc] initWithArray:userarray];
     sizeFit = CGSizeZero;
     if (automaticResize) {
         [self display];
@@ -170,8 +172,19 @@
         
         previousFrame = tagView.frame;
         gotPreviousFrame = YES;
+        BOOL exist=NO;
+        for (int i=0; i<_usertextArray.count; i++) {
+            NSManagedObject *array = [_usertextArray objectAtIndex:i];
+            if ([[NSString stringWithFormat:@"%@",[array valueForKey:@"name"] ] isEqualToString:text]) {
+                exist=YES;
+                break;
+            }
+        }
+        if(exist){
+            [tagView setBackgroundColor:[UIColor orangeColor]];
+        }else [tagView setBackgroundColor:[self getBackgroundColor]];
         
-        [tagView setBackgroundColor:[self getBackgroundColor]];
+        
         [tagView setCornerRadius:self.cornerRadius];
         [tagView setBorderColor:self.borderColor.CGColor];
         [tagView setBorderWidth:self.borderWidth];
@@ -307,8 +320,8 @@
 - (void)tagViewWantsToBeDeleted:(DWTagView *)tagView {
     NSMutableArray *mTextArray = [self.textArray mutableCopy];
     [mTextArray removeObject:tagView.label.text];
-    [self setTags:mTextArray];
     
+    [self setTags:mTextArray:_usertextArray];
     if ([self.tagDelegate respondsToSelector:@selector(tagListTagsChanged:)]) {
         [self.tagDelegate tagListTagsChanged:self];
     }

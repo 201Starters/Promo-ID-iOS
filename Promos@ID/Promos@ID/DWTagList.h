@@ -21,6 +21,7 @@
 @property (nonatomic) BOOL showTagMenu;
 @property (nonatomic, strong) UIView *view;
 @property (nonatomic, strong) NSArray *textArray;
+@property (nonatomic, strong) NSArray *usertextArray;
 @property (nonatomic, weak) id<DWTagListDelegate> tagDelegate;
 @property (nonatomic, strong) UIColor *highlightedBackgroundColor;
 @property (nonatomic) BOOL automaticResize;
@@ -39,7 +40,7 @@
 
 - (void)setTagBackgroundColor:(UIColor *)color;
 - (void)setTagHighlightColor:(UIColor *)color;
-- (void)setTags:(NSArray *)array;
+- (void)setTags:(NSArray *)array:(NSArray *)userarray;
 - (void)display;
 - (CGSize)fittedSize;
 - (void)scrollToBottomAnimated:(BOOL)animated;

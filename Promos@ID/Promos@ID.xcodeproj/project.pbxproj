@@ -28,6 +28,8 @@
 		41253A4E1A6F9F5E002FF8C3 /* QuestionInterestNAV.m in Sources */ = {isa = PBXBuildFile; fileRef = 41253A4D1A6F9F5E002FF8C3 /* QuestionInterestNAV.m */; };
 		41253A521A6FA88C002FF8C3 /* title.png in Resources */ = {isa = PBXBuildFile; fileRef = 41253A511A6FA88C002FF8C3 /* title.png */; };
 		41253A541A6FADA8002FF8C3 /* titlebackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 41253A531A6FADA8002FF8C3 /* titlebackground.png */; };
+		4150A5991A70ACE500EE4C3B /* Promo@ID.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4150A5971A70ACE500EE4C3B /* Promo@ID.xcdatamodeld */; };
+		4150A59B1A70BF5300EE4C3B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4150A59A1A70BF5300EE4C3B /* CoreData.framework */; };
 		41827C3C1A6FCD8800900276 /* QuestionBrand.m in Sources */ = {isa = PBXBuildFile; fileRef = 41827C3B1A6FCD8800900276 /* QuestionBrand.m */; };
 		41827C411A6FD4B700900276 /* prainstall_2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41827C401A6FD4B700900276 /* prainstall_2.storyboard */; };
 		41827C441A6FD61800900276 /* QuestionInterest_2.m in Sources */ = {isa = PBXBuildFile; fileRef = 41827C431A6FD61800900276 /* QuestionInterest_2.m */; };
@@ -84,6 +86,8 @@
 		41253A4D1A6F9F5E002FF8C3 /* QuestionInterestNAV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionInterestNAV.m; sourceTree = "<group>"; };
 		41253A511A6FA88C002FF8C3 /* title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = title.png; sourceTree = "<group>"; };
 		41253A531A6FADA8002FF8C3 /* titlebackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = titlebackground.png; sourceTree = "<group>"; };
+		4150A5981A70ACE500EE4C3B /* Promo@ID.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Promo@ID.xcdatamodel"; sourceTree = "<group>"; };
+		4150A59A1A70BF5300EE4C3B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		41827C3A1A6FCD8800900276 /* QuestionBrand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionBrand.h; sourceTree = "<group>"; };
 		41827C3B1A6FCD8800900276 /* QuestionBrand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionBrand.m; sourceTree = "<group>"; };
 		41827C401A6FD4B700900276 /* prainstall_2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = prainstall_2.storyboard; sourceTree = "<group>"; };
@@ -109,6 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4150A59B1A70BF5300EE4C3B /* CoreData.framework in Frameworks */,
 				25176B0F1A6E4880009CE3CE /* CoreLocation.framework in Frameworks */,
 				25176AF61A694F7C009CE3CE /* CoreGraphics.framework in Frameworks */,
 				25176AF41A694F75009CE3CE /* Foundation.framework in Frameworks */,
@@ -129,6 +134,7 @@
 		25176AB91A6943D6009CE3CE = {
 			isa = PBXGroup;
 			children = (
+				4150A59A1A70BF5300EE4C3B /* CoreData.framework */,
 				25176B0E1A6E4880009CE3CE /* CoreLocation.framework */,
 				25176AF51A694F7C009CE3CE /* CoreGraphics.framework */,
 				25176AF31A694F75009CE3CE /* Foundation.framework */,
@@ -170,6 +176,7 @@
 				25176AD51A6943D6009CE3CE /* Images.xcassets */,
 				25176AD71A6943D6009CE3CE /* LaunchScreen.xib */,
 				25176AC51A6943D6009CE3CE /* Supporting Files */,
+				4150A5971A70ACE500EE4C3B /* Promo@ID.xcdatamodeld */,
 			);
 			path = "Promos@ID";
 			sourceTree = "<group>";
@@ -380,6 +387,7 @@
 				41253A4E1A6F9F5E002FF8C3 /* QuestionInterestNAV.m in Sources */,
 				41E6713C1A6EB42500CFFDC2 /* QuestionInterest.m in Sources */,
 				25176AF01A694C80009CE3CE /* MainTabBarViewController.m in Sources */,
+				4150A5991A70ACE500EE4C3B /* Promo@ID.xcdatamodeld in Sources */,
 				41E671471A6F16BC00CFFDC2 /* UIImage+ImageEffects.m in Sources */,
 				41827C4B1A6FF08700900276 /* PageContentViewController.m in Sources */,
 				41E671391A6EB37800CFFDC2 /* DWTagList.m in Sources */,
@@ -590,6 +598,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4150A5971A70ACE500EE4C3B /* Promo@ID.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4150A5981A70ACE500EE4C3B /* Promo@ID.xcdatamodel */,
+			);
+			currentVersion = 4150A5981A70ACE500EE4C3B /* Promo@ID.xcdatamodel */;
+			path = "Promo@ID.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 25176ABA1A6943D6009CE3CE /* Project object */;
 }

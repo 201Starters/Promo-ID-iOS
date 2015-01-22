@@ -44,7 +44,7 @@
               @"Tag Label",
               @"Long long long long long long Tag", nil];
     [_tagList setAutomaticResize:YES];
-    [_tagList setTags:_arraytag];
+    [_tagList setTags:_arraytag:_arraytag];
     [_tagList setTagDelegate:self];
     [_tagList setCornerRadius:4.0f];
     [_tagList setTextColor:[UIColor whiteColor]];
