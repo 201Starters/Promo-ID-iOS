@@ -11,11 +11,12 @@
 
 @interface PromoViewController : UIViewController <UIPageViewControllerDataSource, UIPageViewControllerDelegate>
 
+@property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 - (IBAction)startWalkthrough:(id)sender;
 @property (strong,nonatomic) UIPageViewController *pageViewController;
 @property (strong,nonatomic) NSArray *pageTitles;
 @property (strong,nonatomic) NSArray *pageImages;
-@property (weak,nonatomic) NSString *userLocationString;
+@property (weak,nonatomic) NSMutableString *userLocationString;
 
 @end
 

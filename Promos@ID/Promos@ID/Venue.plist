@@ -3,25 +3,10 @@
 <plist version="1.0">
 <dict>
 	<key>Mall</key>
-	<dict>
-		<key>Mall Kelapa Gading</key>
-		<array>
-			<string>Mall Kelapa Gading</string>
-			<string>Jakarta Utara</string>
-			<string>mall_kelapa_gading.png</string>
-		</array>
-		<key>Pondok Indah Mall</key>
-		<array>
-			<string>Pondok Indah Mall</string>
-			<string>Jakarta Selatan</string>
-			<string>pondok_indah_mall.png</string>
-		</array>
-		<key>Grand Indonesia</key>
-		<array>
-			<string>Grand Indonesia Shopping Town</string>
-			<string>Jakarta Pusat</string>
-			<string>grand_indonesia.png</string>
-		</array>
-	</dict>
+	<array>
+		<string>Mall Kelapa Gading</string>
+		<string>Pondok Indah Mall</string>
+		<string>Grand Indonesia Shopping Town</string>
+	</array>
 </dict>
 </plist>

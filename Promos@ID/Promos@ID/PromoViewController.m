@@ -18,15 +18,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //Set Location in Title
+    //Set Location in Title - observing notification
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(updatedLocation:) name:@"newLocationNotif" object:nil];
+                                             selector:@selector(updatedLocation:)
+                                                 name:@"newLocationNotif"
+                                               object:nil];
     
     // Initiate PageView
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
-    NSString *recommendedPromoTitle = [NSString stringWithFormat:@"Recommended Promo \n%@",self.userLocationString];
     
-    self.pageTitles = @[recommendedPromoTitle,@"Featured Promo",@"Ending Promo"];
+    self.pageTitles = @[@"Recommended Promo",@"Featured Promo",@"Ending Promo"];
     
     self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
     self.pageViewController.dataSource = self;
@@ -34,13 +34,17 @@
     ContentViewController *startingViewController = [self viewControllerAtIndex:0];
     NSArray *viewControllers = @[startingViewController];
     [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
-    self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 40);
+    self.pageViewController.view.frame = CGRectMake(0, 90, self.view.frame.size.width, self.view.frame.size.height - 130);
     [self addChildViewController:self.pageViewController];
     [self.view addSubview:self.pageViewController.view];
     [self.pageViewController didMoveToParentViewController:self];
     
+    self.navigationController.navigationBar.barTintColor = [UIColor orangeColor];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
     
-    
+    self.tabBarController.tabBar.barTintColor = [UIColor whiteColor];
+    self.tabBarController.tabBar.tintColor = [UIColor orangeColor];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -82,20 +86,7 @@
     return [self viewControllerAtIndex:index];
 }
 
-/*
-- (ContentViewController *) itemControllerForIndex: (NSUInteger) itemIndex
-{
-    if (itemIndex < [_pageTitles count])
-    {
-        ContentViewController *pageItemController = [self.storyboard instantiateViewControllerWithIdentifier: @"ItemController"];
-        pageItemController.titleLabel = self.pageTitles[itemIndex];
-        pageItemController.pageIndex = itemIndex;
-        return pageItemController;
-    }
-    
-    return nil;
-}
-*/
+
 - (ContentViewController *)viewControllerAtIndex:(NSUInteger) index
 {
     if (([self.pageTitles count] == 0) || (index >= [self.pageTitles count])) {
@@ -103,7 +94,7 @@
     }
     
     // Create a new view controller and pass suitable data.
-    ContentViewController *pageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ItemController"];
+    ContentViewController *pageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"collectionView"];
     pageContentViewController.titleText = self.pageTitles[index];
     pageContentViewController.pageIndex = index;
     
@@ -124,6 +115,7 @@
 -(void)updatedLocation:(NSNotification*)notif
 {
     CLLocation *userLocation = (CLLocation*)[[notif userInfo] valueForKey:@"newLocationResult"];
-    self.userLocationString = [NSString stringWithFormat:@"%.3f,%.3f",userLocation.coordinate.latitude,userLocation.coordinate.longitude];
+    self.userLocationString = [NSMutableString stringWithFormat:@"%.3f,%.3f",userLocation.coordinate.latitude,userLocation.coordinate.longitude];
+    [self.locationLabel setText:[NSMutableString stringWithFormat:@"You're near %.6f,%.6f",userLocation.coordinate.latitude,userLocation.coordinate.longitude]];
 }
 @end

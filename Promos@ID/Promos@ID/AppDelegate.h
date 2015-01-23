@@ -10,11 +10,11 @@
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 {
-    NSString *location;
+    NSMutableString *location;
 }
 
 @property (strong, nonatomic) UIWindow *window;
-@property (nonatomic, retain) NSString *location;
+@property (nonatomic, retain) NSMutableString *location;
 
 @end
 

@@ -1,24 +1,26 @@
 //
-//  RecommendedContentViewController.m
+//  ShopDetailViewController.m
 //  Promos@ID
 //
-//  Created by Farandi Kusumo on 1/16/15.
+//  Created by Farandi Kusumo on 1/22/15.
 //  Copyright (c) 2015 Farandi Kusumo. All rights reserved.
 //
 
-#import "ContentViewController.h"
+#import "ShopDetailViewController.h"
 
-@interface ContentViewController ()
+@interface ShopDetailViewController ()
 
 @end
 
-@implementation ContentViewController
-@synthesize pageIndex;
+@implementation ShopDetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.titleLabel.text = self.titleText;
+    self.title = self.shop.name;
+    self.thumbnailShop.image = [UIImage imageNamed:self.shop.image];
+    self.locationMallLabel.text = [NSString stringWithFormat:@"at %@",[self.shop.location objectAtIndex:0]];
+    self.webLabel.text = self.shop.web;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,4 +38,6 @@
 }
 */
 
+- (IBAction)segmentedValueChanged:(UISegmentedControl *)sender {
+}
 @end

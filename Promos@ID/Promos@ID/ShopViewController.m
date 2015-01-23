@@ -1,29 +1,27 @@
 //
-//  SecondViewController.m
+//  ShopViewController.m
 //  Promos@ID
 //
-//  Created by Farandi Kusumo on 1/16/15.
+//  Created by Farandi Kusumo on 1/21/15.
 //  Copyright (c) 2015 Farandi Kusumo. All rights reserved.
 //
 
-#import "VenueViewController.h"
-#import "Venue.h"
-#import "VenueDetailViewController.h"
+#import "ShopViewController.h"
+#import "Shop.h"
+#import "ShopDetailViewController.h"
 
-@interface VenueViewController ()
+@interface ShopViewController () <UITableViewDataSource,UITableViewDelegate>
 
 @end
 
-@implementation VenueViewController{
-    NSArray *venues;
+@implementation ShopViewController{
+    NSArray *shops;
     NSArray *searchResults;
-    NSDictionary *venueDict;
 }
 @synthesize tableView;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
     [self initiateVariable];
     
     self.navigationController.navigationBar.barTintColor = [UIColor orangeColor];
@@ -36,11 +34,11 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table View Delegate
+#pragma mark - table view delegate and data source
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *cellIdentifier = @"VenueCell";
+    static NSString *cellIdentifier = @"ShopCell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
@@ -48,17 +46,15 @@
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
     
-    //Display Venue in the table cell
-    Venue *venue = nil;
+    Shop *shop = nil;
     
     if (tableView == self.searchDisplayController.searchResultsTableView) {
-        venue = [searchResults objectAtIndex:indexPath.row];
+        shop = [searchResults objectAtIndex:indexPath.row];
     } else{
-        venue = [venues objectAtIndex:indexPath.row];
+        shop = [shops objectAtIndex:indexPath.row];
     }
-    cell.textLabel.text = venue.name;
-//    cell.imageView.image = [UIImage imageNamed:venue.image];
-    return  cell;
+    cell.textLabel.text = shop.name;
+    return cell;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -67,7 +63,7 @@
         return [searchResults count];
     }
     else {
-        return [venues count];
+        return [shops count];
     }
 }
 
@@ -76,7 +72,7 @@
 -(void)filterContentForSearchText:(NSString *)searchText scope:(NSString*)scope
 {
     NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"name contains[c] %@", searchText];
-    searchResults = [venues filteredArrayUsingPredicate:resultPredicate];
+    searchResults = [shops filteredArrayUsingPredicate:resultPredicate];
 }
 
 -(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
@@ -86,56 +82,55 @@
     return YES;
 }
 
-#pragma mark - segue initialization for navigation
-
-
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([segue.identifier isEqualToString:@"showVenueDetail"]) {
-        NSIndexPath *indexPath = nil;
-        Venue *venue = nil;
-        
-        if(self.searchDisplayController.active)
-        {
-            indexPath = [self.searchDisplayController.searchResultsTableView indexPathForSelectedRow];
-            venue = [searchResults objectAtIndex:indexPath.row];
-        } else
-        {
-            indexPath = [self.tableView indexPathForSelectedRow];
-            venue = [venues objectAtIndex:indexPath.row];
-        }
-
-        VenueDetailViewController *destViewController = segue.destinationViewController;
-        destViewController.venue = venue;
-    }
-}
 
 #pragma mark - initial dummy variable
 
 -(void)initiateVariable
 {
-    Venue *kelapa_gading = [Venue new];
-    kelapa_gading.name = @"Mall Kelapa Gading";
-    kelapa_gading.location = @"Jakarta Utara";
-    kelapa_gading.image = @"kelapa_gading_mall.png";
-    kelapa_gading.map = nil;
-    kelapa_gading.store = nil;
+    Shop *iBox = [Shop new];
+    iBox.name = @"iBox";
+    iBox.location = [NSArray arrayWithObjects:@"Mall Kelapa Gading",@"Pondok Indah Mall",nil];
+    iBox.image = @"ibox.png";
+    iBox.web = @"ibox.co.id";
+
+    Shop *uniqlo = [Shop new];
+    uniqlo.name = @"Uniqlo";
+    uniqlo.location = [NSArray arrayWithObjects:@"Pondok Indah Mall",@"Grand Indonesia Shopping Town", nil];
+    uniqlo.image = @"uniqlo.png";
+    uniqlo.web = @"uniqlo.com";
+
+    Shop *zara = [Shop new];
+    zara.name = @"ZARA";
+    zara.location = [NSArray arrayWithObjects:@"Grand Indonesia Shopping Town",@"Mall Kelapa Gading", nil];
+    zara.image = @"zara.png";
+    zara.web = @"zara.com";
     
-    Venue *pondok_indah = [Venue new];
-    pondok_indah.name = @"Pondok Indah Mall";
-    pondok_indah.location = @"Jakarta Selatan";
-    pondok_indah.image = @"pondok_indah_mall.png";
-    pondok_indah.map = nil;
-    pondok_indah.store = nil;
-    
-    Venue *grand_indonesia = [Venue new];
-    grand_indonesia.name = @"Grand Indonesia Shopping Town";
-    grand_indonesia.location = @"Jakarta Pusat";
-    grand_indonesia.image = @"grand_indonesia.png";
-    grand_indonesia.map = nil;
-    grand_indonesia.store = nil;
-    
-    venues = [NSArray arrayWithObjects:kelapa_gading,pondok_indah,grand_indonesia, nil];
+    shops = [NSArray arrayWithObjects:iBox,uniqlo,zara, nil];
 }
+
+
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"showShopDetail"]) {
+        NSIndexPath *indexPath = nil;
+        Shop *shop = nil;
+        
+        if(self.searchDisplayController.active)
+        {
+            indexPath = [self.searchDisplayController.searchResultsTableView indexPathForSelectedRow];
+            shop = [searchResults objectAtIndex:indexPath.row];
+        } else
+        {
+            indexPath = [self.tableView indexPathForSelectedRow];
+            shop = [shops objectAtIndex:indexPath.row];
+        }
+        
+        ShopDetailViewController *destViewController = segue.destinationViewController;
+        destViewController.shop = shop;
+    }
+}
+
 
 @end

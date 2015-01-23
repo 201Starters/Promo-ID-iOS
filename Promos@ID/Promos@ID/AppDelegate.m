@@ -19,13 +19,16 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     UIPageControl *pageControl = [UIPageControl appearance];
-    pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
+    UIColor *indicatorTintColor = [UIColor colorWithRed:255/255.0 green:205/255.0 blue:119/255.0 alpha:1.0];
+    
+    pageControl.pageIndicatorTintColor = indicatorTintColor;
     pageControl.currentPageIndicatorTintColor = [UIColor orangeColor];
     pageControl.backgroundColor = [UIColor whiteColor];
     
+    
     self.locationManager = [[CLLocationManager alloc]init];
     self.locationManager.delegate = self;
-    self.locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     
     if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
         [self.locationManager requestWhenInUseAuthorization];
@@ -63,9 +66,12 @@
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
     CLLocation *newLocation = [locations lastObject];
-    [[NSNotificationCenter defaultCenter]postNotificationName:@"newLocationNotif" object:self userInfo:[NSDictionary dictionaryWithObject:newLocation forKey:@"newLocationResult"]];
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"newLocationNotif"
+                                                       object:self
+                                                     userInfo:[NSDictionary dictionaryWithObject:newLocation
+                                                                                          forKey:@"newLocationResult"]];
     
-    self.location = [locations lastObject];
+    //self.location = [locations lastObject];
 }
 
 
