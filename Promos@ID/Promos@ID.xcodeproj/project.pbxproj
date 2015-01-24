@@ -36,6 +36,8 @@
 		41827C481A6FEEEA00900276 /* background2.png in Resources */ = {isa = PBXBuildFile; fileRef = 41827C461A6FEEEA00900276 /* background2.png */; };
 		41827C4B1A6FF08700900276 /* PageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41827C4A1A6FF08700900276 /* PageContentViewController.m */; };
 		41827C4D1A6FF6FF00900276 /* background1.png in Resources */ = {isa = PBXBuildFile; fileRef = 41827C4C1A6FF6FF00900276 /* background1.png */; };
+		4196651B1A74535400D8850D /* GettingStarted.m in Sources */ = {isa = PBXBuildFile; fileRef = 4196651A1A74535400D8850D /* GettingStarted.m */; };
+		4196651D1A7455B300D8850D /* buttonback.png in Resources */ = {isa = PBXBuildFile; fileRef = 4196651C1A7455B300D8850D /* buttonback.png */; };
 		41E671331A6EA27700CFFDC2 /* prainstall.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41E671321A6EA27700CFFDC2 /* prainstall.storyboard */; };
 		41E671391A6EB37800CFFDC2 /* DWTagList.m in Sources */ = {isa = PBXBuildFile; fileRef = 41E671381A6EB37800CFFDC2 /* DWTagList.m */; };
 		41E6713C1A6EB42500CFFDC2 /* QuestionInterest.m in Sources */ = {isa = PBXBuildFile; fileRef = 41E6713B1A6EB42500CFFDC2 /* QuestionInterest.m */; };
@@ -97,6 +99,9 @@
 		41827C491A6FF08700900276 /* PageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageContentViewController.h; sourceTree = "<group>"; };
 		41827C4A1A6FF08700900276 /* PageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageContentViewController.m; sourceTree = "<group>"; };
 		41827C4C1A6FF6FF00900276 /* background1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background1.png; sourceTree = "<group>"; };
+		419665191A74535400D8850D /* GettingStarted.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GettingStarted.h; sourceTree = "<group>"; };
+		4196651A1A74535400D8850D /* GettingStarted.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GettingStarted.m; sourceTree = "<group>"; };
+		4196651C1A7455B300D8850D /* buttonback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonback.png; sourceTree = "<group>"; };
 		41E671321A6EA27700CFFDC2 /* prainstall.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = prainstall.storyboard; sourceTree = "<group>"; };
 		41E671371A6EB37800CFFDC2 /* DWTagList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWTagList.h; sourceTree = "<group>"; };
 		41E671381A6EB37800CFFDC2 /* DWTagList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWTagList.m; sourceTree = "<group>"; };
@@ -218,6 +223,7 @@
 		25176B071A6E3A38009CE3CE /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				4196651C1A7455B300D8850D /* buttonback.png */,
 				41827C4C1A6FF6FF00900276 /* background1.png */,
 				41827C461A6FEEEA00900276 /* background2.png */,
 				41253A531A6FADA8002FF8C3 /* titlebackground.png */,
@@ -253,6 +259,8 @@
 				41827C401A6FD4B700900276 /* prainstall_2.storyboard */,
 				41827C421A6FD61800900276 /* QuestionInterest_2.h */,
 				41827C431A6FD61800900276 /* QuestionInterest_2.m */,
+				419665191A74535400D8850D /* GettingStarted.h */,
+				4196651A1A74535400D8850D /* GettingStarted.m */,
 			);
 			name = PreInstall;
 			sourceTree = "<group>";
@@ -362,6 +370,7 @@
 				25176AD61A6943D6009CE3CE /* Images.xcassets in Resources */,
 				41E671331A6EA27700CFFDC2 /* prainstall.storyboard in Resources */,
 				41827C4D1A6FF6FF00900276 /* background1.png in Resources */,
+				4196651D1A7455B300D8850D /* buttonback.png in Resources */,
 				2514941A1A6E5FA800DB0D4B /* kelapa_gading_mall.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -390,6 +399,7 @@
 				4150A5991A70ACE500EE4C3B /* Promo@ID.xcdatamodeld in Sources */,
 				41E671471A6F16BC00CFFDC2 /* UIImage+ImageEffects.m in Sources */,
 				41827C4B1A6FF08700900276 /* PageContentViewController.m in Sources */,
+				4196651B1A74535400D8850D /* GettingStarted.m in Sources */,
 				41E671391A6EB37800CFFDC2 /* DWTagList.m in Sources */,
 				25176ACE1A6943D6009CE3CE /* PromoViewController.m in Sources */,
 				25176AC81A6943D6009CE3CE /* main.m in Sources */,

@@ -158,7 +158,10 @@
     arraysearch = [[NSMutableArray alloc] init];
     for (int i=0; i<self.arraytag.count; i++) {
         
-        if (![[self.arraytag objectAtIndex:i] compare:self.searchbar.text options:NSCaseInsensitiveSearch]) {
+       // NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF IN %@", self.arraytag];
+        //BOOL result = [predicate evaluateWithObject:self.searchbar.text];
+        
+        if ([[self.arraytag objectAtIndex:i] containsString: self.searchbar.text]) {
             [arraysearch addObject:[self.arraytag objectAtIndex:i]];
             //NSLog(@"isi search= %@",[self.arraytag objectAtIndex:i]);
         }
