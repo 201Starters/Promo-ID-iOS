@@ -42,6 +42,7 @@
 		25176AFB1A695BF6009CE3CE /* ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25176AFA1A695BF6009CE3CE /* ContentViewController.m */; };
 		25176B061A6E37F7009CE3CE /* Venue.plist in Resources */ = {isa = PBXBuildFile; fileRef = 25176B051A6E37F7009CE3CE /* Venue.plist */; };
 		25176B0F1A6E4880009CE3CE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25176B0E1A6E4880009CE3CE /* CoreLocation.framework */; };
+		2528CBB21A74FAE40035D3D1 /* PromoViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 2528CBB11A74FAE40035D3D1 /* PromoViewLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +109,8 @@
 		25176AFA1A695BF6009CE3CE /* ContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentViewController.m; sourceTree = "<group>"; };
 		25176B051A6E37F7009CE3CE /* Venue.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Venue.plist; sourceTree = "<group>"; };
 		25176B0E1A6E4880009CE3CE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		2528CBB01A74FAE40035D3D1 /* PromoViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PromoViewLayout.h; sourceTree = "<group>"; };
+		2528CBB11A74FAE40035D3D1 /* PromoViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PromoViewLayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +195,8 @@
 				25176ACD1A6943D6009CE3CE /* PromoViewController.m */,
 				25176AF91A695BF6009CE3CE /* ContentViewController.h */,
 				25176AFA1A695BF6009CE3CE /* ContentViewController.m */,
+				2528CBB01A74FAE40035D3D1 /* PromoViewLayout.h */,
+				2528CBB11A74FAE40035D3D1 /* PromoViewLayout.m */,
 				251718CA1A71FF8D006D15A4 /* PromoViewCell.h */,
 				251718CB1A71FF8D006D15A4 /* PromoViewCell.m */,
 				25176ACF1A6943D6009CE3CE /* VenueViewController.h */,
@@ -380,6 +385,7 @@
 				251718C71A71FF09006D15A4 /* PSCollectionView.m in Sources */,
 				25176AFB1A695BF6009CE3CE /* ContentViewController.m in Sources */,
 				251718A71A70FDBC006D15A4 /* Promo.m in Sources */,
+				2528CBB21A74FAE40035D3D1 /* PromoViewLayout.m in Sources */,
 				251718981A6FC7AD006D15A4 /* Shop.m in Sources */,
 				2517189B1A6FDBB0006D15A4 /* VenueDetailViewController.m in Sources */,
 				25176AD11A6943D6009CE3CE /* VenueViewController.m in Sources */,

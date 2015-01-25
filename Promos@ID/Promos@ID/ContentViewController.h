@@ -9,15 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "PSCollectionView.h"
 
-@interface ContentViewController : UIViewController //<UIScrollViewDelegate,PSCollectionViewDataSource,PSCollectionViewDelegate>
-{
-    //PSCollectionView *promoView;
-}
+@interface ContentViewController : UIViewController <UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *pageImages;
-@property (weak, nonatomic) IBOutlet UILabel *locationLabel;
-//@property (retain, nonatomic) PSCollectionView *promoView;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionPromo;
+
 
 
 @property (nonatomic) NSUInteger pageIndex;

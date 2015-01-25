@@ -6,14 +6,13 @@
 //  Copyright (c) 2015 Farandi Kusumo. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 #import "PSCollectionViewCell.h"
 
-@interface PromoViewCell : PSCollectionViewCell{
-    UIImageView *promoThumbnail;
-    UILabel *promoDesc;
-}
-
-+ (CGFloat)heightForViewWithObject:(id)object inColumnWidth:(CGFloat)columnWidth;
-
+@interface PromoViewCell : UICollectionViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *poster;
+@property (weak, nonatomic) IBOutlet UILabel *title;
+@property (weak, nonatomic) IBOutlet UILabel *shop;
+@property (weak, nonatomic) IBOutlet UILabel *expiryNotification;
 
 @end

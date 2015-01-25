@@ -21,6 +21,7 @@
                         <subviews>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="wSS-mZ-vSg">
                                 <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                <color key="barTintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="wJr-bI-qns" id="zUE-Jc-kHs"/>
@@ -135,16 +136,96 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J9B-1P-Ulp" customClass="PSCollectionView">
-                                <rect key="frame" x="0.0" y="36" width="600" height="489"/>
-                            </scrollView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9mT-2T-Rg2">
+                                <rect key="frame" x="0.0" y="45" width="600" height="535"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="b7b-e8-Ud5">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PromoCell" id="dgq-UX-EQW" customClass="PromoViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="152" height="254"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VW3-em-EAV">
+                                                    <rect key="frame" x="0.0" y="0.0" width="152" height="183"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IUz-dh-MK5">
+                                                    <rect key="frame" x="0.0" y="184" width="152" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expires in 2 days" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="50y-Yd-lCp">
+                                                    <rect key="frame" x="0.0" y="233" width="152" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="hdM-c8-cUf"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shops" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="THQ-vR-QsG">
+                                                    <rect key="frame" x="0.0" y="210" width="152" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="Ci6-cn-xAl"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="THQ-vR-QsG" firstAttribute="leading" secondItem="IUz-dh-MK5" secondAttribute="leading" id="16d-HB-7S5"/>
+                                            <constraint firstItem="50y-Yd-lCp" firstAttribute="top" secondItem="THQ-vR-QsG" secondAttribute="bottom" constant="2" id="2P7-he-Rsr"/>
+                                            <constraint firstItem="IUz-dh-MK5" firstAttribute="leading" secondItem="VW3-em-EAV" secondAttribute="leading" id="7rv-o4-bpp"/>
+                                            <constraint firstAttribute="bottom" secondItem="50y-Yd-lCp" secondAttribute="bottom" id="8u1-pU-s7w"/>
+                                            <constraint firstItem="50y-Yd-lCp" firstAttribute="leading" secondItem="THQ-vR-QsG" secondAttribute="leading" id="D3M-Ff-6d1"/>
+                                            <constraint firstItem="50y-Yd-lCp" firstAttribute="trailing" secondItem="THQ-vR-QsG" secondAttribute="trailing" id="KE3-pW-dq1"/>
+                                            <constraint firstItem="VW3-em-EAV" firstAttribute="top" secondItem="dgq-UX-EQW" secondAttribute="top" id="LdS-6t-gYj"/>
+                                            <constraint firstItem="THQ-vR-QsG" firstAttribute="trailing" secondItem="IUz-dh-MK5" secondAttribute="trailing" id="S3e-2t-IYS"/>
+                                            <constraint firstItem="THQ-vR-QsG" firstAttribute="top" secondItem="VW3-em-EAV" secondAttribute="bottom" constant="27" id="WHf-KG-wxH"/>
+                                            <constraint firstItem="VW3-em-EAV" firstAttribute="trailing" secondItem="IUz-dh-MK5" secondAttribute="trailing" id="Xfk-nV-dvT"/>
+                                            <constraint firstItem="IUz-dh-MK5" firstAttribute="top" secondItem="VW3-em-EAV" secondAttribute="bottom" constant="1" id="cJj-Lz-TjI"/>
+                                            <constraint firstItem="50y-Yd-lCp" firstAttribute="top" secondItem="IUz-dh-MK5" secondAttribute="bottom" constant="19" id="ckc-ds-wZc"/>
+                                            <constraint firstItem="50y-Yd-lCp" firstAttribute="leading" secondItem="dgq-UX-EQW" secondAttribute="leading" id="jn7-VZ-O3s"/>
+                                            <constraint firstAttribute="trailing" secondItem="THQ-vR-QsG" secondAttribute="trailing" id="jxg-Go-6na"/>
+                                        </constraints>
+                                        <size key="customSize" width="152" height="254"/>
+                                        <connections>
+                                            <outlet property="expiryNotification" destination="50y-Yd-lCp" id="1h0-66-XdY"/>
+                                            <outlet property="poster" destination="VW3-em-EAV" id="1gE-Gy-nq4"/>
+                                            <outlet property="shop" destination="THQ-vR-QsG" id="BH9-CU-tzN"/>
+                                            <outlet property="title" destination="IUz-dh-MK5" id="Pgt-sd-xNN"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="MqU-cY-KCy" id="yTX-Sc-0QT"/>
+                                    <outlet property="delegate" destination="MqU-cY-KCy" id="0Yb-qt-dNj"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="9mT-2T-Rg2" firstAttribute="leading" secondItem="C6N-4B-2ik" secondAttribute="leadingMargin" constant="-16" id="37G-fa-Tfx"/>
+                            <constraint firstItem="9mT-2T-Rg2" firstAttribute="top" secondItem="Hll-Mz-6qc" secondAttribute="bottom" constant="17" id="8PL-Ha-L7p"/>
+                            <constraint firstAttribute="centerX" secondItem="9mT-2T-Rg2" secondAttribute="centerX" id="Kw1-Z3-Uhg"/>
                             <constraint firstAttribute="centerX" secondItem="Hll-Mz-6qc" secondAttribute="centerX" id="cpG-K4-uf1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9mT-2T-Rg2" secondAttribute="trailing" constant="-16" id="m1u-L1-yay"/>
+                            <constraint firstItem="EhJ-K0-jkS" firstAttribute="top" secondItem="9mT-2T-Rg2" secondAttribute="bottom" constant="20" id="nQA-iZ-tic"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="collectionPromo" destination="9mT-2T-Rg2" id="xOe-yz-n6G"/>
                         <outlet property="titleLabel" destination="Hll-Mz-6qc" id="Yem-20-iyq"/>
                     </connections>
                 </viewController>
@@ -356,6 +437,7 @@
                         <subviews>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="9D7-RG-Odb">
                                 <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                <color key="barTintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="8rJ-Kc-sve" id="iPX-gV-YNw"/>
