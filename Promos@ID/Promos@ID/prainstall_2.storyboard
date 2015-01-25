@@ -1,0 +1,547 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="xIA-cR-qZ3">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Question Interest2-->
+        <scene sceneID="TYs-8V-bcf">
+            <objects>
+                <viewController id="xIA-cR-qZ3" customClass="QuestionInterest_2" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tcl-6T-huR"/>
+                        <viewControllerLayoutGuide type="bottom" id="smJ-a7-1ch"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DmM-Bp-bKf">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="63E4A818-8189-4E18-A150-6D1F3133CEC2" translatesAutoresizingMaskIntoConstraints="NO" id="vSi-9d-NzG">
+                                <rect key="frame" x="16" y="128" width="568" height="4"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t8M-6A-mto">
+                                <rect key="frame" x="65" y="140" width="471" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="15"/>
+                                <color key="textColor" red="0.7814873964088398" green="0.7814873964088398" blue="0.7814873964088398" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="46" y="143" width="308" height="16"/>
+                                </variation>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="shoppingIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="BKW-yr-zSU">
+                                <rect key="frame" x="152" y="20" width="100" height="100"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="20" width="100" height="100"/>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="12" y="20" width="100" height="100"/>
+                                </variation>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DISCOUNT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="jAL-N8-8x6">
+                                <rect key="frame" x="260" y="59" width="189" height="61"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="42"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="124" y="59" width="189" height="61"/>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="120" y="59" width="189" height="61"/>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0yD-ls-rL6">
+                                <rect key="frame" x="247" y="521" width="106" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="106" id="n2Q-3y-LNY"/>
+                                </constraints>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" red="0.99436723069999999" green="0.99436723069999999" blue="0.99436723069999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="UwQ-hv-Sh2" kind="show" id="KQx-ro-BAz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oBn-00-dXc">
+                                <rect key="frame" x="247" y="559" width="107" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="Maybe Later">
+                                    <color key="titleColor" red="0.99436723069999999" green="0.99436723069999999" blue="0.99436723069999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DISCOUNT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9fm-xQ-UfS">
+                                <rect key="frame" x="203" y="172" width="189" height="61"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="42"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="124" y="59" width="189" height="61"/>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="120" y="59" width="189" height="61"/>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="t8M-6A-mto" firstAttribute="leading" secondItem="DmM-Bp-bKf" secondAttribute="leading" constant="65" id="1sw-WK-Cpz">
+                                <variation key="widthClass=compact" constant="46"/>
+                            </constraint>
+                            <constraint firstAttribute="trailing" secondItem="vSi-9d-NzG" secondAttribute="trailing" constant="16" id="Iw0-2M-FW9"/>
+                            <constraint firstItem="oBn-00-dXc" firstAttribute="top" secondItem="0yD-ls-rL6" secondAttribute="bottom" constant="8" symbolic="YES" id="Kcn-TW-Pc4"/>
+                            <constraint firstAttribute="trailing" secondItem="t8M-6A-mto" secondAttribute="trailing" constant="64" id="LZi-dg-WeN">
+                                <variation key="widthClass=compact" constant="46"/>
+                            </constraint>
+                            <constraint firstItem="oBn-00-dXc" firstAttribute="leading" secondItem="0yD-ls-rL6" secondAttribute="leading" id="Pza-1Z-wYh"/>
+                            <constraint firstItem="oBn-00-dXc" firstAttribute="centerX" secondItem="0yD-ls-rL6" secondAttribute="centerX" id="cLq-6p-eEQ"/>
+                            <constraint firstItem="vSi-9d-NzG" firstAttribute="leading" secondItem="DmM-Bp-bKf" secondAttribute="leading" constant="16" id="fYT-Nr-1KC"/>
+                            <constraint firstItem="0yD-ls-rL6" firstAttribute="centerX" secondItem="t8M-6A-mto" secondAttribute="centerX" id="gxm-Ha-eAW"/>
+                            <constraint firstItem="vSi-9d-NzG" firstAttribute="top" secondItem="DmM-Bp-bKf" secondAttribute="top" constant="128" id="hFk-PH-lz5"/>
+                            <constraint firstItem="t8M-6A-mto" firstAttribute="top" secondItem="DmM-Bp-bKf" secondAttribute="top" constant="140" id="jhh-Ho-QYc">
+                                <variation key="widthClass=compact" constant="143"/>
+                            </constraint>
+                            <constraint firstItem="smJ-a7-1ch" firstAttribute="top" secondItem="0yD-ls-rL6" secondAttribute="bottom" constant="49" id="m0X-mn-NPV"/>
+                            <constraint firstItem="smJ-a7-1ch" firstAttribute="top" secondItem="oBn-00-dXc" secondAttribute="bottom" constant="11" id="wc7-w6-SLQ"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CsV-x0-Mm6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1662" y="139"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="pMB-I0-abL">
+            <objects>
+                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="J8R-Md-uYI" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xbn-g0-BIX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1041" y="-521"/>
+        </scene>
+        <!--Page Content View Controller-->
+        <scene sceneID="Is9-jl-icc">
+            <objects>
+                <viewController storyboardIdentifier="PageContentViewController" id="lsq-VD-wcm" customClass="PageContentViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pwb-48-BMY"/>
+                        <viewControllerLayoutGuide type="bottom" id="mw9-4s-euj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Y8X-pc-ziv">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5m8-B3-7B5">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OGO-g3-h3N" customClass="DWTagList">
+                                <rect key="frame" x="49" y="238" width="502" height="266"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="302" id="zzW-XB-8as">
+                                        <variation key="widthClass=compact" constant="242"/>
+                                    </constraint>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="zzW-XB-8as"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="zzW-XB-8as"/>
+                                    </mask>
+                                </variation>
+                            </scrollView>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search here" translatesAutoresizingMaskIntoConstraints="NO" id="jhb-yr-hVH">
+                                <rect key="frame" x="49" y="194" width="502" height="44"/>
+                                <color key="tintColor" red="0.99436723069999999" green="0.99436723069999999" blue="0.99436723069999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="light" returnKeyType="go"/>
+                            </searchBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Choose What you Interest at" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FkT-r2-ndn">
+                                <rect key="frame" x="49" y="160" width="502" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="v8X-Cy-ivH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="15"/>
+                                <color key="textColor" red="0.99436723069999999" green="0.99436723069999999" blue="0.99436723069999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shoppingIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="EEC-wY-Mbc">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="20" width="100" height="100"/>
+                                </variation>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5m8-B3-7B5" firstAttribute="leading" secondItem="Y8X-pc-ziv" secondAttribute="leading" id="2Ik-rb-BQt"/>
+                            <constraint firstItem="OGO-g3-h3N" firstAttribute="top" secondItem="pwb-48-BMY" secondAttribute="bottom" constant="218" id="5XZ-bF-gw1"/>
+                            <constraint firstItem="FkT-r2-ndn" firstAttribute="leading" secondItem="jhb-yr-hVH" secondAttribute="leading" id="7nD-hO-udM"/>
+                            <constraint firstItem="OGO-g3-h3N" firstAttribute="centerX" secondItem="5m8-B3-7B5" secondAttribute="centerX" id="LUp-OS-p4F"/>
+                            <constraint firstItem="FkT-r2-ndn" firstAttribute="trailing" secondItem="jhb-yr-hVH" secondAttribute="trailing" id="P3G-Jo-sXy"/>
+                            <constraint firstAttribute="trailing" secondItem="5m8-B3-7B5" secondAttribute="trailing" id="Xvi-L2-Lzx"/>
+                            <constraint firstItem="OGO-g3-h3N" firstAttribute="top" secondItem="jhb-yr-hVH" secondAttribute="bottom" id="bXu-4j-YNP"/>
+                            <constraint firstItem="mw9-4s-euj" firstAttribute="top" secondItem="OGO-g3-h3N" secondAttribute="bottom" constant="96" id="cdA-Xx-R9U"/>
+                            <constraint firstAttribute="bottom" secondItem="5m8-B3-7B5" secondAttribute="bottom" id="gK5-wA-8W4"/>
+                            <constraint firstItem="jhb-yr-hVH" firstAttribute="leading" secondItem="Y8X-pc-ziv" secondAttribute="leadingMargin" constant="33" id="iae-qy-7kh"/>
+                            <constraint firstItem="5m8-B3-7B5" firstAttribute="top" secondItem="Y8X-pc-ziv" secondAttribute="top" id="oQh-1M-II5"/>
+                            <constraint firstItem="jhb-yr-hVH" firstAttribute="centerX" secondItem="OGO-g3-h3N" secondAttribute="centerX" id="u0M-aI-j5z"/>
+                            <constraint firstItem="jhb-yr-hVH" firstAttribute="top" secondItem="FkT-r2-ndn" secondAttribute="bottom" constant="13" id="x4l-PV-Jv9"/>
+                            <constraint firstItem="OGO-g3-h3N" firstAttribute="leading" secondItem="Y8X-pc-ziv" secondAttribute="leading" constant="49" id="xZt-lW-pkY"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="EEC-wY-Mbc"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="EEC-wY-Mbc"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="5m8-B3-7B5" id="2Yk-0W-gM1"/>
+                        <outlet property="labelchoose" destination="FkT-r2-ndn" id="xf1-KC-eHn"/>
+                        <outlet property="searchbar" destination="jhb-yr-hVH" id="J2s-6V-Wxo"/>
+                        <outlet property="tagList" destination="OGO-g3-h3N" id="dyp-Al-7tG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z5N-vh-Uqg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1041" y="139"/>
+        </scene>
+        <!--Getting Started-->
+        <scene sceneID="19l-jk-M7N">
+            <objects>
+                <viewController id="UwQ-hv-Sh2" customClass="GettingStarted" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Bbj-49-v1V"/>
+                        <viewControllerLayoutGuide type="bottom" id="qpF-Uh-2Gt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sUE-Ov-fTT">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shoppingIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="Voe-XU-HSi">
+                                <rect key="frame" x="250" y="97" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="6gS-Oc-6eH"/>
+                                    <constraint firstAttribute="height" constant="100" id="eji-XW-saD"/>
+                                </constraints>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="20" width="100" height="100"/>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="12" y="20" width="100" height="100"/>
+                                </variation>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DISCOUNT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vQz-Pe-xLb">
+                                <rect key="frame" x="211" y="205" width="179" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="phc-0B-1RQ"/>
+                                    <constraint firstAttribute="width" constant="179" id="yyb-BZ-wdT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="42"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="124" y="59" width="189" height="61"/>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="120" y="59" width="189" height="61"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Setup is Complete" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ISk-Q9-3fr">
+                                <rect key="frame" x="162" y="402" width="277" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="277" id="f9n-zg-0AM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qzW-6t-bGK">
+                                <rect key="frame" x="238" y="460" width="125" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="125" id="Moi-pk-wgZ"/>
+                                    <constraint firstAttribute="height" constant="44" id="rVl-s6-Zy9"/>
+                                </constraints>
+                                <state key="normal" title="Getting Started" backgroundImage="buttonback.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qzW-6t-bGK" firstAttribute="centerX" secondItem="ISk-Q9-3fr" secondAttribute="centerX" id="4f2-MB-jwU"/>
+                            <constraint firstItem="qzW-6t-bGK" firstAttribute="centerX" secondItem="vQz-Pe-xLb" secondAttribute="centerX" id="ZKK-qG-VHA"/>
+                            <constraint firstItem="Voe-XU-HSi" firstAttribute="top" secondItem="Bbj-49-v1V" secondAttribute="bottom" constant="77" id="bX0-of-7ob"/>
+                            <constraint firstItem="vQz-Pe-xLb" firstAttribute="centerX" secondItem="Voe-XU-HSi" secondAttribute="centerX" id="cNU-Au-dZt"/>
+                            <constraint firstItem="qzW-6t-bGK" firstAttribute="top" secondItem="ISk-Q9-3fr" secondAttribute="bottom" constant="37" id="gW3-HD-zE3"/>
+                            <constraint firstItem="vQz-Pe-xLb" firstAttribute="top" secondItem="Voe-XU-HSi" secondAttribute="bottom" constant="8" symbolic="YES" id="jM3-eb-NQb"/>
+                            <constraint firstItem="Voe-XU-HSi" firstAttribute="centerX" secondItem="sUE-Ov-fTT" secondAttribute="centerX" id="raY-4z-Zbc"/>
+                            <constraint firstAttribute="bottom" secondItem="ISk-Q9-3fr" secondAttribute="bottom" constant="177" id="sHg-bO-Bvy"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="rQ0-PB-7hf"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="piT-Wp-Ztn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1662" y="927"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="63E4A818-8189-4E18-A150-6D1F3133CEC2" width="415" height="7">
+            <mutableData key="keyedArchiveRepresentation">
+YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
+GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
+c1dOU0NvbG9ygAKADRIgwAAAgAOAC1h7NDE1LCA3fdIVChYYWk5TLm9iamVjdHOhF4AEgArSFQoaHaIb
+HIAFgAaACRAA0iAKISJfEBROU1RJRkZSZXByZXNlbnRhdGlvboAHgAhPETXSTU0AKgAALWxeXl5eqamp
+qampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqamp
+qampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqamp
+qampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqamp
+qampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqamp
+qampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqamp
+qampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqamp
+qampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqamp
+qampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqamp
+qampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqamp
+qampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqamp
+qampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqamp
+qampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqamp
+qampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqamp
+qampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqamp
+qampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqamp
+qampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqamp
+qampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqamp
+qampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqamp
+qampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqamp
+qampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqamp
+qampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqamp
+qampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqamp
+qampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqamp
+qampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqamp
+qampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqamp
+qampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqamp
+qampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqampqamp
+qampqampqampqampqampqampqampqampqampqakHBwcHj4+Pj///////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////DAwMDI+Pj4//////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////wwMDAyPj4+P////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////8MDAwMj4+Pj///////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////DAwMDI+Pj4//////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////wwMDAwiIiIiPj4+
+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+
+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+
+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+
+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+
+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+
+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+
+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+
+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+
+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+
+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+
+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+
+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+
+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+
+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+
+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+
+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+
+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+
+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+
+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+
+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+
+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+
+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+
+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+
+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+
+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+
+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+
+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+
+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4CAgICAA4BAAADAAAAAQGfAAABAQADAAAAAQAHAAAB
+AgADAAAABAAALhoBAwADAAAAAQABAAABBgADAAAAAQACAAABEQAEAAAAAQAAAAgBEgADAAAAAQABAAAB
+FQADAAAAAQAEAAABFgADAAAAAQAHAAABFwAEAAAAAQAALWQBHAADAAAAAQABAAABUgADAAAAAQABAAAB
+UwADAAAABAAALiKHcwAHAAAHqAAALioAAAAAAAgACAAIAAgAAQABAAEAAQAAB6hhcHBsAiAAAG1udHJS
+R0IgWFlaIAfZAAIAGQALABoAC2Fjc3BBUFBMAAAAAGFwcGwAAAAAAAAAAAAAAAAAAAAAAAD21gABAAAA
+ANMtYXBwbAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC2Rlc2MA
+AAEIAAAAb2RzY20AAAF4AAAFbGNwcnQAAAbkAAAAOHd0cHQAAAccAAAAFHJYWVoAAAcwAAAAFGdYWVoA
+AAdEAAAAFGJYWVoAAAdYAAAAFHJUUkMAAAdsAAAADmNoYWQAAAd8AAAALGJUUkMAAAdsAAAADmdUUkMA
+AAdsAAAADmRlc2MAAAAAAAAAFEdlbmVyaWMgUkdCIFByb2ZpbGUAAAAAAAAAAAAAABRHZW5lcmljIFJH
+QiBQcm9maWxlAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABt
+bHVjAAAAAAAAAB4AAAAMc2tTSwAAACgAAAF4aHJIUgAAACgAAAGgY2FFUwAAACQAAAHIcHRCUgAAACYA
+AAHsdWtVQQAAACoAAAISZnJGVQAAACgAAAI8emhUVwAAABYAAAJkaXRJVAAAACgAAAJ6bmJOTwAAACYA
+AAKia29LUgAAABYAAALIY3NDWgAAACIAAALeaGVJTAAAAB4AAAMAZGVERQAAACwAAAMeaHVIVQAAACgA
+AANKc3ZTRQAAACYAAAKiemhDTgAAABYAAANyamFKUAAAABoAAAOIcm9STwAAACQAAAOiZWxHUgAAACIA
+AAPGcHRQTwAAACYAAAPobmxOTAAAACgAAAQOZXNFUwAAACYAAAPodGhUSAAAACQAAAQ2dHJUUgAAACIA
+AARaZmlGSQAAACgAAAR8cGxQTAAAACwAAASkcnVSVQAAACIAAATQYXJFRwAAACYAAATyZW5VUwAAACYA
+AAUYZGFESwAAAC4AAAU+AFYBYQBlAG8AYgBlAGMAbgD9ACAAUgBHAEIAIABwAHIAbwBmAGkAbABHAGUA
+bgBlAHIAaQENAGsAaQAgAFIARwBCACAAcAByAG8AZgBpAGwAUABlAHIAZgBpAGwAIABSAEcAQgAgAGcA
+ZQBuAOgAcgBpAGMAUABlAHIAZgBpAGwAIABSAEcAQgAgAEcAZQBuAOkAcgBpAGMAbwQXBDAEMwQwBDsE
+TAQ9BDgEOQAgBD8EQAQ+BEQEMAQ5BDsAIABSAEcAQgBQAHIAbwBmAGkAbAAgAGcA6QBuAOkAcgBpAHEA
+dQBlACAAUgBWAEKQGnUoACAAUgBHAEIAIIJyX2ljz4/wAFAAcgBvAGYAaQBsAG8AIABSAEcAQgAgAGcA
+ZQBuAGUAcgBpAGMAbwBHAGUAbgBlAHIAaQBzAGsAIABSAEcAQgAtAHAAcgBvAGYAaQBsx3y8GAAgAFIA
+RwBCACDVBLhc0wzHfABPAGIAZQBjAG4A/QAgAFIARwBCACAAcAByAG8AZgBpAGwF5AXoBdUF5AXZBdwA
+IABSAEcAQgAgBdsF3AXcBdkAQQBsAGwAZwBlAG0AZQBpAG4AZQBzACAAUgBHAEIALQBQAHIAbwBmAGkA
+bADBAGwAdABhAGwA4QBuAG8AcwAgAFIARwBCACAAcAByAG8AZgBpAGxmbpAaACAAUgBHAEIAIGPPj/Bl
+h072TgCCLAAgAFIARwBCACAw1zDtMNUwoTCkMOsAUAByAG8AZgBpAGwAIABSAEcAQgAgAGcAZQBuAGUA
+cgBpAGMDkwO1A70DuQO6A8wAIAPAA8EDvwPGA68DuwAgAFIARwBCAFAAZQByAGYAaQBsACAAUgBHAEIA
+IABnAGUAbgDpAHIAaQBjAG8AQQBsAGcAZQBtAGUAZQBuACAAUgBHAEIALQBwAHIAbwBmAGkAZQBsDkIO
+Gw4jDkQOHw4lDkwAIABSAEcAQgAgDhcOMQ5IDicORA4bAEcAZQBuAGUAbAAgAFIARwBCACAAUAByAG8A
+ZgBpAGwAaQBZAGwAZQBpAG4AZQBuACAAUgBHAEIALQBwAHIAbwBmAGkAaQBsAGkAVQBuAGkAdwBlAHIA
+cwBhAGwAbgB5ACAAcAByAG8AZgBpAGwAIABSAEcAQgQeBDEESQQ4BDkAIAQ/BEAEPgREBDgEOwRMACAA
+UgBHAEIGRQZEBkEAIAYqBjkGMQZKBkEAIABSAEcAQgAgBicGRAY5BicGRQBHAGUAbgBlAHIAaQBjACAA
+UgBHAEIAIABQAHIAbwBmAGkAbABlAEcAZQBuAGUAcgBlAGwAIABSAEcAQgAtAGIAZQBzAGsAcgBpAHYA
+ZQBsAHMAZXRleHQAAAAAQ29weXJpZ2h0IDIwMDcgQXBwbGUgSW5jLiwgYWxsIHJpZ2h0cyByZXNlcnZl
+ZC4AWFlaIAAAAAAAAPNSAAEAAAABFs9YWVogAAAAAAAAdE0AAD3uAAAD0FhZWiAAAAAAAABadQAArHMA
+ABc0WFlaIAAAAAAAACgaAAAVnwAAuDZjdXJ2AAAAAAAAAAEBzQAAc2YzMgAAAAAAAQxCAAAF3v//8yYA
+AAeSAAD9kf//+6L///2jAAAD3AAAwGzSJSYnKFokY2xhc3NuYW1lWCRjbGFzc2VzXxAQTlNCaXRtYXBJ
+bWFnZVJlcKMpKitfEBBOU0JpdG1hcEltYWdlUmVwWk5TSW1hZ2VSZXBYTlNPYmplY3TSJSYtLldOU0Fy
+cmF5oi0r0iUmMDFeTlNNdXRhYmxlQXJyYXmjMC0r0zM0CjU2N1dOU1doaXRlXE5TQ29sb3JTcGFjZUQw
+IDAAEAOADNIlJjk6V05TQ29sb3KiOSvSJSY8PVdOU0ltYWdlojwrXxAPTlNLZXllZEFyY2hpdmVy0UBB
+VHJvb3SAAQAIABEAGgAjAC0AMgA3AEYATABXAF4AZQByAHkAgQCDAIUAigCMAI4AlwCcAKcAqQCrAK0A
+sgC1ALcAuQC7AL0AwgDZANsA3TazNrg2wzbMNt824zb2NwE3CjcPNxc3GjcfNy43Mjc5N0E3TjdTN1U3
+VzdcN2Q3ZzdsN3Q3dzeJN4w3kQAAAAAAAAIBAAAAAAAAAEIAAAAAAAAAAAAAAAAAADeTA
+</mutableData>
+        </image>
+        <image name="buttonback.png" width="222" height="66"/>
+        <image name="shoppingIcon.png" width="175" height="175"/>
+    </resources>
+    <color key="tintColor" red="0.076161084249999997" green="0.076161084249999997" blue="0.076161084249999997" alpha="1" colorSpace="calibratedRGB"/>
+</document>
