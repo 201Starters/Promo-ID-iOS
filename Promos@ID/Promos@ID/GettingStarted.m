@@ -18,7 +18,7 @@
     [super viewDidLoad];
     
     UIImageView * ViewBackgroundImage=[[UIImageView alloc] initWithFrame:self.view.frame];
-    UIImage* imagebackground = [UIImage imageNamed:@"background2.png"];
+    UIImage* imagebackground = [UIImage imageNamed:@"background3.png"];
     UIImage * effectImage = nil;
     effectImage = [imagebackground applyDarkEffect];
     ViewBackgroundImage.image = effectImage;

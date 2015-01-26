@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="63E4A818-8189-4E18-A150-6D1F3133CEC2" translatesAutoresizingMaskIntoConstraints="NO" id="vSi-9d-NzG">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="F7B9D369-F3EF-4EAC-8A64-3FF95AD868B1" translatesAutoresizingMaskIntoConstraints="NO" id="vSi-9d-NzG">
                                 <rect key="frame" x="16" y="128" width="568" height="4"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
@@ -264,8 +264,8 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qzW-6t-bGK">
-                                <rect key="frame" x="238" y="460" width="125" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qzW-6t-bGK">
+                                <rect key="frame" x="238" y="460" width="125" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="125" id="Moi-pk-wgZ"/>
                                     <constraint firstAttribute="height" constant="44" id="rVl-s6-Zy9"/>
@@ -296,7 +296,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="63E4A818-8189-4E18-A150-6D1F3133CEC2" width="415" height="7">
+        <image name="F7B9D369-F3EF-4EAC-8A64-3FF95AD868B1" width="415" height="7">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

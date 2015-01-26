@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Shops-->
@@ -59,10 +60,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hll-Mz-6qc">
-                                <rect key="frame" x="123" y="82" width="354" height="79"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3FO-yF-GpT">
+                                <rect key="frame" x="16" y="113" width="568" height="467"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewLayout key="collectionViewLayout" id="Y6T-77-MxN" customClass="PintCollectionViewLayout"/>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PintReuse" id="bIb-i3-kgj">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hll-Mz-6qc">
+                                <rect key="frame" x="123" y="72" width="354" height="33"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="26" id="BjD-uG-iVt"/>
+                                    <constraint firstAttribute="height" constant="33" id="7hU-oL-JaM"/>
+                                    <constraint firstAttribute="width" constant="354" id="C0B-uZ-o1u"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="19"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -71,10 +89,19 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="Hll-Mz-6qc" secondAttribute="centerX" id="3Kh-wm-mOP"/>
+                            <constraint firstItem="Hll-Mz-6qc" firstAttribute="centerX" secondItem="3FO-yF-GpT" secondAttribute="centerX" id="2Xu-Gj-Uw4"/>
+                            <constraint firstItem="3FO-yF-GpT" firstAttribute="trailing" secondItem="C6N-4B-2ik" secondAttribute="trailingMargin" id="4cZ-v9-9Eg"/>
+                            <constraint firstItem="Hll-Mz-6qc" firstAttribute="top" secondItem="Sy1-Zs-BUU" secondAttribute="bottom" constant="8" symbolic="YES" id="Acl-76-3kh"/>
+                            <constraint firstItem="3FO-yF-GpT" firstAttribute="top" secondItem="C6N-4B-2ik" secondAttribute="top" constant="113" id="CcX-3J-eFq"/>
+                            <constraint firstItem="3FO-yF-GpT" firstAttribute="top" secondItem="Hll-Mz-6qc" secondAttribute="bottom" constant="8" symbolic="YES" id="Cgz-TV-xBc"/>
+                            <constraint firstItem="3FO-yF-GpT" firstAttribute="leading" secondItem="C6N-4B-2ik" secondAttribute="leadingMargin" id="aWt-8b-wUO"/>
+                            <constraint firstItem="Hll-Mz-6qc" firstAttribute="top" secondItem="C6N-4B-2ik" secondAttribute="top" constant="72" id="eNs-ZW-YOW"/>
+                            <constraint firstAttribute="bottom" secondItem="3FO-yF-GpT" secondAttribute="bottom" constant="20" symbolic="YES" id="z4k-nt-bEv"/>
                         </constraints>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="collectionView" destination="3FO-yF-GpT" id="dRY-bu-Fsu"/>
                         <outlet property="titleLabel" destination="Hll-Mz-6qc" id="Yem-20-iyq"/>
                     </connections>
                 </viewController>

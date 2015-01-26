@@ -24,9 +24,9 @@
     
     // Initiate PageView
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
-    NSString *recommendedPromoTitle = [NSString stringWithFormat:@"Recommended Promo \n%@",self.userLocationString];
+    //NSString *recommendedPromoTitle = [NSString stringWithFormat:@"Recommended Promo \n%@",self.userLocationString];
     
-    self.pageTitles = @[recommendedPromoTitle,@"Featured Promo",@"Ending Promo"];
+    self.pageTitles = @[@"Recommended Promo",@"Featured Promo",@"Ending Promo"];
     
     self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
     self.pageViewController.dataSource = self;
@@ -38,8 +38,6 @@
     [self addChildViewController:self.pageViewController];
     [self.view addSubview:self.pageViewController.view];
     [self.pageViewController didMoveToParentViewController:self];
-    
-    
     
 }
 

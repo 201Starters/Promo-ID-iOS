@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PintCollectionViewLayout.h"
+#import "PNCollectionCellBackgroundView.h"
 
-@interface ContentViewController : UIViewController
+@interface ContentViewController : UIViewController<UICollectionViewDelegateJSPintLayout,UICollectionViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *pageImages;
