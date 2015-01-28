@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "PSCollectionView.h"
+#import "PNCollectionCellBackgroundView.h"
+#import "PintCollectionViewLayout.h"
 
 @interface ContentViewController : UIViewController <UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 

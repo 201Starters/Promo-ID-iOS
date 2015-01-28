@@ -38,11 +38,12 @@
 		25176AF21A694F68009CE3CE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25176AF11A694F68009CE3CE /* UIKit.framework */; };
 		25176AF41A694F75009CE3CE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25176AF31A694F75009CE3CE /* Foundation.framework */; };
 		25176AF61A694F7C009CE3CE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25176AF51A694F7C009CE3CE /* CoreGraphics.framework */; };
-		25176AF81A695125009CE3CE /* cameraTabBarItem.png in Resources */ = {isa = PBXBuildFile; fileRef = 25176AF71A695125009CE3CE /* cameraTabBarItem.png */; };
 		25176AFB1A695BF6009CE3CE /* ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25176AFA1A695BF6009CE3CE /* ContentViewController.m */; };
 		25176B061A6E37F7009CE3CE /* Venue.plist in Resources */ = {isa = PBXBuildFile; fileRef = 25176B051A6E37F7009CE3CE /* Venue.plist */; };
 		25176B0F1A6E4880009CE3CE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25176B0E1A6E4880009CE3CE /* CoreLocation.framework */; };
-		2528CBB21A74FAE40035D3D1 /* PromoViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 2528CBB11A74FAE40035D3D1 /* PromoViewLayout.m */; };
+		2528CBBF1A78C5960035D3D1 /* PintCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 2528CBBC1A78C5960035D3D1 /* PintCollectionViewLayout.m */; };
+		2528CBC01A78C5960035D3D1 /* PNCollectionCellBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2528CBBE1A78C5960035D3D1 /* PNCollectionCellBackgroundView.m */; };
+		2528CBC31A78F7280035D3D1 /* PromoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2528CBC21A78F7280035D3D1 /* PromoDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,13 +105,16 @@
 		25176AF11A694F68009CE3CE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		25176AF31A694F75009CE3CE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		25176AF51A694F7C009CE3CE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		25176AF71A695125009CE3CE /* cameraTabBarItem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cameraTabBarItem.png; path = "../../../GitHub Forks/idev-recipes/RaisedCenterTabBar/Images/Instagram/cameraTabBarItem.png"; sourceTree = "<group>"; };
 		25176AF91A695BF6009CE3CE /* ContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentViewController.h; sourceTree = "<group>"; };
 		25176AFA1A695BF6009CE3CE /* ContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentViewController.m; sourceTree = "<group>"; };
 		25176B051A6E37F7009CE3CE /* Venue.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Venue.plist; sourceTree = "<group>"; };
 		25176B0E1A6E4880009CE3CE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		2528CBB01A74FAE40035D3D1 /* PromoViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PromoViewLayout.h; sourceTree = "<group>"; };
-		2528CBB11A74FAE40035D3D1 /* PromoViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PromoViewLayout.m; sourceTree = "<group>"; };
+		2528CBBB1A78C5960035D3D1 /* PintCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PintCollectionViewLayout.h; sourceTree = "<group>"; };
+		2528CBBC1A78C5960035D3D1 /* PintCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PintCollectionViewLayout.m; sourceTree = "<group>"; };
+		2528CBBD1A78C5960035D3D1 /* PNCollectionCellBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNCollectionCellBackgroundView.h; sourceTree = "<group>"; };
+		2528CBBE1A78C5960035D3D1 /* PNCollectionCellBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNCollectionCellBackgroundView.m; sourceTree = "<group>"; };
+		2528CBC11A78F7280035D3D1 /* PromoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PromoDetailViewController.h; sourceTree = "<group>"; };
+		2528CBC21A78F7280035D3D1 /* PromoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PromoDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +189,7 @@
 		25176AC41A6943D6009CE3CE /* Promos@ID */ = {
 			isa = PBXGroup;
 			children = (
+				2528CBBA1A78C56A0035D3D1 /* JSPint */,
 				251718A81A710A96006D15A4 /* PSCollectionView */,
 				2517188F1A6FAB13006D15A4 /* Object */,
 				25176AC91A6943D6009CE3CE /* AppDelegate.h */,
@@ -195,10 +200,10 @@
 				25176ACD1A6943D6009CE3CE /* PromoViewController.m */,
 				25176AF91A695BF6009CE3CE /* ContentViewController.h */,
 				25176AFA1A695BF6009CE3CE /* ContentViewController.m */,
-				2528CBB01A74FAE40035D3D1 /* PromoViewLayout.h */,
-				2528CBB11A74FAE40035D3D1 /* PromoViewLayout.m */,
 				251718CA1A71FF8D006D15A4 /* PromoViewCell.h */,
 				251718CB1A71FF8D006D15A4 /* PromoViewCell.m */,
+				2528CBC11A78F7280035D3D1 /* PromoDetailViewController.h */,
+				2528CBC21A78F7280035D3D1 /* PromoDetailViewController.m */,
 				25176ACF1A6943D6009CE3CE /* VenueViewController.h */,
 				25176AD01A6943D6009CE3CE /* VenueViewController.m */,
 				251718991A6FDBB0006D15A4 /* VenueDetailViewController.h */,
@@ -208,7 +213,6 @@
 				2517189C1A70C84E006D15A4 /* ShopDetailViewController.h */,
 				2517189D1A70C84E006D15A4 /* ShopDetailViewController.m */,
 				25176AD21A6943D6009CE3CE /* Main.storyboard */,
-				25176AF71A695125009CE3CE /* cameraTabBarItem.png */,
 				25176B071A6E3A38009CE3CE /* Images */,
 				25176B041A6E3780009CE3CE /* Resources */,
 				25176AD51A6943D6009CE3CE /* Images.xcassets */,
@@ -266,6 +270,17 @@
 				251494181A6E5FA800DB0D4B /* pondok_indah_mall.png */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		2528CBBA1A78C56A0035D3D1 /* JSPint */ = {
+			isa = PBXGroup;
+			children = (
+				2528CBBB1A78C5960035D3D1 /* PintCollectionViewLayout.h */,
+				2528CBBC1A78C5960035D3D1 /* PintCollectionViewLayout.m */,
+				2528CBBD1A78C5960035D3D1 /* PNCollectionCellBackgroundView.h */,
+				2528CBBE1A78C5960035D3D1 /* PNCollectionCellBackgroundView.m */,
+			);
+			name = JSPint;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -360,7 +375,6 @@
 				251494191A6E5FA800DB0D4B /* grand_indonesia.png in Resources */,
 				25176AD61A6943D6009CE3CE /* Images.xcassets in Resources */,
 				2514941A1A6E5FA800DB0D4B /* kelapa_gading_mall.png in Resources */,
-				25176AF81A695125009CE3CE /* cameraTabBarItem.png in Resources */,
 				251718A41A70CAA9006D15A4 /* zara.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -380,20 +394,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				251718951A6FC733006D15A4 /* ShopViewController.m in Sources */,
+				2528CBBF1A78C5960035D3D1 /* PintCollectionViewLayout.m in Sources */,
 				2517189E1A70C84E006D15A4 /* ShopDetailViewController.m in Sources */,
 				251718CC1A71FF8D006D15A4 /* PromoViewCell.m in Sources */,
 				251718C71A71FF09006D15A4 /* PSCollectionView.m in Sources */,
 				25176AFB1A695BF6009CE3CE /* ContentViewController.m in Sources */,
 				251718A71A70FDBC006D15A4 /* Promo.m in Sources */,
-				2528CBB21A74FAE40035D3D1 /* PromoViewLayout.m in Sources */,
 				251718981A6FC7AD006D15A4 /* Shop.m in Sources */,
 				2517189B1A6FDBB0006D15A4 /* VenueDetailViewController.m in Sources */,
+				2528CBC31A78F7280035D3D1 /* PromoDetailViewController.m in Sources */,
 				25176AD11A6943D6009CE3CE /* VenueViewController.m in Sources */,
 				251718921A6FAB42006D15A4 /* Venue.m in Sources */,
 				251718C81A71FF09006D15A4 /* PSCollectionViewCell.m in Sources */,
 				25176ACB1A6943D6009CE3CE /* AppDelegate.m in Sources */,
 				25176AF01A694C80009CE3CE /* MainTabBarViewController.m in Sources */,
 				251718C91A71FF09006D15A4 /* README.md in Sources */,
+				2528CBC01A78C5960035D3D1 /* PNCollectionCellBackgroundView.m in Sources */,
 				25176ACE1A6943D6009CE3CE /* PromoViewController.m in Sources */,
 				25176AC81A6943D6009CE3CE /* main.m in Sources */,
 			);
