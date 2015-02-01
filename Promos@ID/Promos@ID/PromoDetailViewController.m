@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 Farandi Kusumo. All rights reserved.
 //
 
+@import CoreData;
 #import "PromoDetailViewController.h"
 
 @interface PromoDetailViewController ()
@@ -61,5 +62,35 @@
 */
 
 - (IBAction)favorites:(id)sender {
+	NSManagedObjectContext *context = [self managedObjectContext];
+	
+	NSManagedObject *promo = [NSEntityDescription insertNewObjectForEntityForName:@"Promo" inManagedObjectContext:context];
+	[promo setValue:self.promo.title forKey:@"title"];
+	[promo setValue:self.promo.brand forKey:@"brand"];
+	[promo setValue:self.promo.brand_logo forKey:@"brand_logo"];
+	[promo setValue:self.promo.desc	forKey:@"desc"];
+	[promo setValue:self.promo.poster_big forKey:@"poster_big"];
+	[promo setValue:self.promo.poster_small forKey:@"poster_small"];
+	
+	NSError *error = nil;
+	if (![context save:&error]) {
+		NSLog(@"Error saving to CoreData ! %@ %@",error,[error localizedDescription]);
+	}
+	
+	UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Favorites"
+												   message:@"You saved a promo as favorite"
+												  delegate:self
+										 cancelButtonTitle:@"OK"
+										 otherButtonTitles:nil, nil];
+	[alert show];
+}
+
+- (NSManagedObjectContext *)managedObjectContext {
+	NSManagedObjectContext *context = nil;
+	id delegate = [[UIApplication sharedApplication] delegate];
+	if ([delegate performSelector:@selector(managedObjectContext)]) {
+		context = [delegate managedObjectContext];
+	}
+	return context;
 }
 @end

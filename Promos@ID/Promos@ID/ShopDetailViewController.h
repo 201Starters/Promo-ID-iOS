@@ -9,12 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "Shop.h"
 
-@interface ShopDetailViewController : UIViewController
+@interface ShopDetailViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *thumbnailShop;
 @property (weak, nonatomic) IBOutlet UILabel *locationMallLabel;
 @property (weak, nonatomic) IBOutlet UILabel *locationBlockLabel;
 @property (weak, nonatomic) IBOutlet UILabel *opHoursLabel;
 @property (weak, nonatomic) IBOutlet UILabel *webLabel;
+@property (weak, nonatomic) IBOutlet UITableView *tableBranch;
 
 
 - (IBAction)segmentedValueChanged:(UISegmentedControl *)sender;

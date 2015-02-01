@@ -11,7 +11,7 @@
 @interface Promo : NSObject
 @property (nonatomic, strong) NSString *title; // title of promo
 @property (nonatomic, strong) NSString *brand; // brand who do the promo
-@property (nonatomic, strong) NSString *brand_logo; // brand who do the promo
+@property (nonatomic, strong) NSString *brand_logo; // brand logo who do the promo
 @property (nonatomic, strong) NSArray *shop; // shop of promo
 @property (nonatomic, strong) NSArray *location; // location of promo
 @property (nonatomic, strong) NSString *poster_small; // thumbnail file of promo

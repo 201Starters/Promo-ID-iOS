@@ -41,6 +41,9 @@
 		25176AFB1A695BF6009CE3CE /* ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25176AFA1A695BF6009CE3CE /* ContentViewController.m */; };
 		25176B061A6E37F7009CE3CE /* Venue.plist in Resources */ = {isa = PBXBuildFile; fileRef = 25176B051A6E37F7009CE3CE /* Venue.plist */; };
 		25176B0F1A6E4880009CE3CE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25176B0E1A6E4880009CE3CE /* CoreLocation.framework */; };
+		251D19BB1A7E730000878C21 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 251D19BA1A7E730000878C21 /* CoreData.framework */; };
+		251D19BE1A7E735700878C21 /* Promos@ID.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 251D19BC1A7E735700878C21 /* Promos@ID.xcdatamodeld */; };
+		251D19C11A7E80A100878C21 /* FavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 251D19C01A7E80A100878C21 /* FavoritesViewController.m */; };
 		2528CBBF1A78C5960035D3D1 /* PintCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 2528CBBC1A78C5960035D3D1 /* PintCollectionViewLayout.m */; };
 		2528CBC01A78C5960035D3D1 /* PNCollectionCellBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2528CBBE1A78C5960035D3D1 /* PNCollectionCellBackgroundView.m */; };
 		2528CBC31A78F7280035D3D1 /* PromoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2528CBC21A78F7280035D3D1 /* PromoDetailViewController.m */; };
@@ -109,6 +112,10 @@
 		25176AFA1A695BF6009CE3CE /* ContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentViewController.m; sourceTree = "<group>"; };
 		25176B051A6E37F7009CE3CE /* Venue.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Venue.plist; sourceTree = "<group>"; };
 		25176B0E1A6E4880009CE3CE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		251D19BA1A7E730000878C21 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		251D19BD1A7E735700878C21 /* Promos@ID.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Promos@ID.xcdatamodel"; sourceTree = "<group>"; };
+		251D19BF1A7E80A100878C21 /* FavoritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesViewController.h; sourceTree = "<group>"; };
+		251D19C01A7E80A100878C21 /* FavoritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesViewController.m; sourceTree = "<group>"; };
 		2528CBBB1A78C5960035D3D1 /* PintCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PintCollectionViewLayout.h; sourceTree = "<group>"; };
 		2528CBBC1A78C5960035D3D1 /* PintCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PintCollectionViewLayout.m; sourceTree = "<group>"; };
 		2528CBBD1A78C5960035D3D1 /* PNCollectionCellBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNCollectionCellBackgroundView.h; sourceTree = "<group>"; };
@@ -122,6 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				251D19BB1A7E730000878C21 /* CoreData.framework in Frameworks */,
 				25176B0F1A6E4880009CE3CE /* CoreLocation.framework in Frameworks */,
 				25176AF61A694F7C009CE3CE /* CoreGraphics.framework in Frameworks */,
 				25176AF41A694F75009CE3CE /* Foundation.framework in Frameworks */,
@@ -167,6 +175,7 @@
 		25176AB91A6943D6009CE3CE = {
 			isa = PBXGroup;
 			children = (
+				251D19BA1A7E730000878C21 /* CoreData.framework */,
 				25176B0E1A6E4880009CE3CE /* CoreLocation.framework */,
 				25176AF51A694F7C009CE3CE /* CoreGraphics.framework */,
 				25176AF31A694F75009CE3CE /* Foundation.framework */,
@@ -212,11 +221,14 @@
 				251718941A6FC733006D15A4 /* ShopViewController.m */,
 				2517189C1A70C84E006D15A4 /* ShopDetailViewController.h */,
 				2517189D1A70C84E006D15A4 /* ShopDetailViewController.m */,
+				251D19BF1A7E80A100878C21 /* FavoritesViewController.h */,
+				251D19C01A7E80A100878C21 /* FavoritesViewController.m */,
 				25176AD21A6943D6009CE3CE /* Main.storyboard */,
 				25176B071A6E3A38009CE3CE /* Images */,
 				25176B041A6E3780009CE3CE /* Resources */,
 				25176AD51A6943D6009CE3CE /* Images.xcassets */,
 				25176AD71A6943D6009CE3CE /* LaunchScreen.xib */,
+				251D19BC1A7E735700878C21 /* Promos@ID.xcdatamodeld */,
 				25176AC51A6943D6009CE3CE /* Supporting Files */,
 			);
 			path = "Promos@ID";
@@ -395,11 +407,13 @@
 			files = (
 				251718951A6FC733006D15A4 /* ShopViewController.m in Sources */,
 				2528CBBF1A78C5960035D3D1 /* PintCollectionViewLayout.m in Sources */,
+				251D19C11A7E80A100878C21 /* FavoritesViewController.m in Sources */,
 				2517189E1A70C84E006D15A4 /* ShopDetailViewController.m in Sources */,
 				251718CC1A71FF8D006D15A4 /* PromoViewCell.m in Sources */,
 				251718C71A71FF09006D15A4 /* PSCollectionView.m in Sources */,
 				25176AFB1A695BF6009CE3CE /* ContentViewController.m in Sources */,
 				251718A71A70FDBC006D15A4 /* Promo.m in Sources */,
+				251D19BE1A7E735700878C21 /* Promos@ID.xcdatamodeld in Sources */,
 				251718981A6FC7AD006D15A4 /* Shop.m in Sources */,
 				2517189B1A6FDBB0006D15A4 /* VenueDetailViewController.m in Sources */,
 				2528CBC31A78F7280035D3D1 /* PromoDetailViewController.m in Sources */,
@@ -616,6 +630,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		251D19BC1A7E735700878C21 /* Promos@ID.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				251D19BD1A7E735700878C21 /* Promos@ID.xcdatamodel */,
+			);
+			currentVersion = 251D19BD1A7E735700878C21 /* Promos@ID.xcdatamodel */;
+			path = "Promos@ID.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 25176ABA1A6943D6009CE3CE /* Project object */;
 }

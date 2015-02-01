@@ -66,6 +66,7 @@
     
     cell.poster.image = [UIImage imageNamed:promo.poster_small];
     cell.title.text = promo.title;
+	cell.brand.text = promo.brand;
 	cell.brandLogo_small.image = [UIImage imageNamed:promo.brand_logo];
     return cell;
 }
@@ -89,7 +90,7 @@
 {
     Promo *etude_EOYSale    = [Promo new];
     etude_EOYSale.title     = @"Etude End of Year Sale";
-    etude_EOYSale.brand     = @"";
+    etude_EOYSale.brand     = @"Etude";
 	etude_EOYSale.brand_logo= @"etudeEOYSale.png";
     etude_EOYSale.shop      = [NSArray arrayWithObjects:@"", nil];
     etude_EOYSale.location  = [NSArray arrayWithObjects:@"", nil];
@@ -99,7 +100,7 @@
     
     Promo *mandiri_discount = [Promo new];
     mandiri_discount.title = @"Mandiri Discount";
-    mandiri_discount.brand     = @"";
+    mandiri_discount.brand     = @"Mandiri";
 	mandiri_discount.brand_logo= @"mandiriDiscount.png";
 	mandiri_discount.shop      = [NSArray arrayWithObjects:@"", nil];
     mandiri_discount.location  = [NSArray arrayWithObjects:@"", nil];
@@ -110,7 +111,7 @@
     
     Promo *cinema21_promo = [Promo new];
     cinema21_promo.title = @"Cinema 21 Promo";
-    cinema21_promo.brand     = @"";
+    cinema21_promo.brand     = @"Cinema 21";
     cinema21_promo.brand_logo= @"promo2.png";
 	cinema21_promo.shop      = [NSArray arrayWithObjects:@"", nil];
     cinema21_promo.location  = [NSArray arrayWithObjects:@"", nil];
@@ -120,7 +121,7 @@
     
     Promo *testing_promo = [Promo new];
     testing_promo.title = @"Testing Promo";
-    testing_promo.brand     = @"";
+    testing_promo.brand     = @"GI";
     testing_promo.brand_logo= @"grand_indonesia.png";
 	testing_promo.shop      = [NSArray arrayWithObjects:@"", nil];
     testing_promo.location  = [NSArray arrayWithObjects:@"", nil];

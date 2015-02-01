@@ -8,15 +8,20 @@
 
 #import <UIKit/UIKit.h>
 #import "Venue.h"
+#import "PNCollectionCellBackgroundView.h"
+#import "PromoViewCell.h"
 
-@interface VenueDetailViewController : UIViewController
+
+@interface VenueDetailViewController : UIViewController <UITableViewDataSource,UITableViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+
 @property (weak, nonatomic) IBOutlet UILabel *addressLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *imageMall;
 
 - (IBAction)segmentedValueChanged:(UISegmentedControl *)sender;
 
+@property (weak, nonatomic) IBOutlet UITableView *tableContent;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionPromo;
 
-@property (weak, nonatomic) IBOutlet UIView *viewStore;
 
 @property (strong,nonatomic) Venue *venue;
 @end
