@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface VenueViewController : UIViewController
+@interface VenueViewController : UIViewController<UITabBarDelegate, UITableViewDataSource,UISearchBarDelegate>
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 
 @end

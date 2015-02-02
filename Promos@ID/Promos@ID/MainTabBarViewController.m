@@ -30,6 +30,9 @@
             NSLog(@"Button Selected");
         }
     }
+    
+    self.tabBarController.tabBar.barTintColor = [UIColor whiteColor];
+    self.tabBarController.tabBar.tintColor = [UIColor orangeColor];
 
 }
 

@@ -7,13 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PSCollectionView.h"
+#import "PNCollectionCellBackgroundView.h"
+#import "PintCollectionViewLayout.h"
 
-@interface ContentViewController : UIViewController
+@interface ContentViewController : UIViewController <UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *pageImages;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionPromo;
+
+
 
 @property (nonatomic) NSUInteger pageIndex;
 @property NSString *titleText;
 @property NSString *imageFile;
+
 @end

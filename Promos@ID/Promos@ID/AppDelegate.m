@@ -18,6 +18,10 @@
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 58642eb9846fbb2e08dc114081c4c65d5e2f2c9d
 @synthesize location;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -41,13 +45,16 @@
     
     // Override point for customization after application launch.
     UIPageControl *pageControl = [UIPageControl appearance];
-    pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
+    UIColor *indicatorTintColor = [UIColor colorWithRed:255/255.0 green:205/255.0 blue:119/255.0 alpha:1.0];
+    
+    pageControl.pageIndicatorTintColor = indicatorTintColor;
     pageControl.currentPageIndicatorTintColor = [UIColor orangeColor];
     pageControl.backgroundColor = [UIColor whiteColor];
     
+    
     self.locationManager = [[CLLocationManager alloc]init];
     self.locationManager.delegate = self;
-    self.locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     
     if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
         [self.locationManager requestWhenInUseAuthorization];
@@ -85,12 +92,16 @@
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
     CLLocation *newLocation = [locations lastObject];
-    [[NSNotificationCenter defaultCenter]postNotificationName:@"newLocationNotif" object:self userInfo:[NSDictionary dictionaryWithObject:newLocation forKey:@"newLocationResult"]];
-    
-    self.location = [locations lastObject];
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"newLocationNotif"
+                                                       object:self
+                                                     userInfo:[NSDictionary dictionaryWithObject:newLocation
+                                                                                          forKey:@"newLocationResult"]];
+	
 }
 
+#pragma mark - Core Data stack
 
+<<<<<<< HEAD
 
 
 
@@ -111,10 +122,13 @@
 
 #pragma mark - Core Data stack
 
+=======
+>>>>>>> 58642eb9846fbb2e08dc114081c4c65d5e2f2c9d
 // Returns the managed object context for the application.
 // If the context doesn't already exist, it is created and bound to the persistent store coordinator for the application.
 - (NSManagedObjectContext *)managedObjectContext
 {
+<<<<<<< HEAD
     if (_managedObjectContext != nil) {
         return _managedObjectContext;
     }
@@ -125,24 +139,46 @@
         [_managedObjectContext setPersistentStoreCoordinator:coordinator];
     }
     return _managedObjectContext;
+=======
+	if (_managedObjectContext != nil) {
+		return _managedObjectContext;
+	}
+	
+	NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
+	if (coordinator != nil) {
+		_managedObjectContext = [[NSManagedObjectContext alloc] init];
+		[_managedObjectContext setPersistentStoreCoordinator:coordinator];
+	}
+	return _managedObjectContext;
+>>>>>>> 58642eb9846fbb2e08dc114081c4c65d5e2f2c9d
 }
 
 // Returns the managed object model for the application.
 // If the model doesn't already exist, it is created from the application's model.
 - (NSManagedObjectModel *)managedObjectModel
 {
+<<<<<<< HEAD
     if (_managedObjectModel != nil) {
         return _managedObjectModel;
     }
     NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"Promo@ID" withExtension:@"momd"];
     _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     return _managedObjectModel;
+=======
+	if (_managedObjectModel != nil) {
+		return _managedObjectModel;
+	}
+	NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"Promos@ID" withExtension:@"momd"];
+	_managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
+	return _managedObjectModel;
+>>>>>>> 58642eb9846fbb2e08dc114081c4c65d5e2f2c9d
 }
 
 // Returns the persistent store coordinator for the application.
 // If the coordinator doesn't already exist, it is created and the application's store added to it.
 - (NSPersistentStoreCoordinator *)persistentStoreCoordinator
 {
+<<<<<<< HEAD
     if (_persistentStoreCoordinator != nil) {
         return _persistentStoreCoordinator;
     }
@@ -180,6 +216,45 @@
     }
     
     return _persistentStoreCoordinator;
+=======
+	if (_persistentStoreCoordinator != nil) {
+		return _persistentStoreCoordinator;
+	}
+	
+	NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"Promos@ID.sqlite"];
+	
+	NSError *error = nil;
+	_persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
+	if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
+		/*
+		 Replace this implementation with code to handle the error appropriately.
+		 
+		 abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+		 
+		 Typical reasons for an error here include:
+		 * The persistent store is not accessible;
+		 * The schema for the persistent store is incompatible with current managed object model.
+		 Check the error message to determine what the actual problem was.
+		 
+		 
+		 If the persistent store is not accessible, there is typically something wrong with the file path. Often, a file URL is pointing into the application's resources directory instead of a writeable directory.
+		 
+		 If you encounter schema incompatibility errors during development, you can reduce their frequency by:
+		 * Simply deleting the existing store:
+		 [[NSFileManager defaultManager] removeItemAtURL:storeURL error:nil]
+		 
+		 * Performing automatic lightweight migration by passing the following dictionary as the options parameter:
+		 @{NSMigratePersistentStoresAutomaticallyOption:@YES, NSInferMappingModelAutomaticallyOption:@YES}
+		 
+		 Lightweight migration will only work for a limited set of schema changes; consult "Core Data Model Versioning and Data Migration Programming Guide" for details.
+		 
+		 */
+		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+		abort();
+	}
+	
+	return _persistentStoreCoordinator;
+>>>>>>> 58642eb9846fbb2e08dc114081c4c65d5e2f2c9d
 }
 
 #pragma mark - Application's Documents directory
@@ -187,7 +262,14 @@
 // Returns the URL to the application's Documents directory.
 - (NSURL *)applicationDocumentsDirectory
 {
+<<<<<<< HEAD
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
 
 @end
+=======
+	return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+}
+
+@end
+>>>>>>> 58642eb9846fbb2e08dc114081c4c65d5e2f2c9d
