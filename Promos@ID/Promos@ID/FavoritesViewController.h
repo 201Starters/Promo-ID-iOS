@@ -14,4 +14,6 @@
 @interface FavoritesViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionPromo;
 
+- (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize;
+
 @end

@@ -17,7 +17,7 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionPromo;
 
 
-
+- (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize;
 @property (nonatomic) NSUInteger pageIndex;
 @property NSString *titleText;
 @property NSString *imageFile;

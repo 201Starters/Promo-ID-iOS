@@ -3,7 +3,7 @@
 //  Promos@ID
 //
 //  Created by Farandi Kusumo on 1/16/15.
-//  Copyright (c) 2015 Farandi Kusumo. All rights reserved.
+//  Copyright (c) 2515 Farandi Kusumo. All rights reserved.
 //
 
 #import "ContentViewController.h"
@@ -64,11 +64,29 @@
     selectedBackgroundView.backgroundColor = [UIColor clearColor];   // no indication of selection
     cell.selectedBackgroundView = selectedBackgroundView;
     
-    cell.poster.image = [UIImage imageNamed:promo.poster_small];
+    UIImage*image=[UIImage imageNamed:promo.poster_small];
+    CGSize size = CGSizeMake((self.view.frame.size.width-25) / 2, (image.size.height/image.size.width)*((self.view.frame.size.width-25) / 2));
+    image=[self imageWithImage:image scaledToSize:size];
+   // NSLog(@"%f",image.size.height);
+    
+    CGRect frame = cell.poster.frame;
+    frame.size.height = image.size.height;
+    frame.size.width = image.size.width;
+    cell.poster.frame = frame;
+    cell.poster.image = image;
     cell.title.text = promo.title;
 	cell.brand.text = promo.brand;
 	cell.brandLogo_small.image = [UIImage imageNamed:promo.brand_logo];
     return cell;
+}
+
+- (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize
+{
+    UIGraphicsBeginImageContext(newSize);
+    [image drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
 }
 
 #pragma mark - UICollectionViewDelegate
@@ -79,7 +97,7 @@
     promo = [promos objectAtIndex:indexPath.item];
     UIImage *image;
     image = [UIImage imageNamed:promo.poster_small];
-    CGSize size = CGSizeMake(self.view.frame.size.width / 2.2, image.size.height + 80);
+    CGSize size = CGSizeMake((self.view.frame.size.width-25) / 2, ((image.size.height/image.size.width)*((self.view.frame.size.width-25) / 2))+ 150);
     return size;
 }
 
