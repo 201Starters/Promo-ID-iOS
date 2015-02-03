@@ -18,6 +18,7 @@
     if (self)
     {
         
+        //[_poster setFrame:CGRectMake(0, 0, self.frame.size.width, 100)];
         UIView *bgView = [[UIView alloc] initWithFrame:self.backgroundView.frame];
         bgView.backgroundColor = [UIColor blueColor];
         bgView.layer.borderColor = [[UIColor whiteColor] CGColor];
@@ -26,6 +27,8 @@
     }
     return self;
 }
+
+
 
 
 @end
