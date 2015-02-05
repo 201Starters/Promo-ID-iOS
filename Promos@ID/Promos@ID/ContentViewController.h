@@ -10,14 +10,15 @@
 #import "PSCollectionView.h"
 #import "PNCollectionCellBackgroundView.h"
 #import "PintCollectionViewLayout.h"
+#import "CHTCollectionViewWaterfallLayout.h"
 
-@interface ContentViewController : UIViewController <UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+@interface ContentViewController : UIViewController <UICollectionViewDataSource, CHTCollectionViewDelegateWaterfallLayout>
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionPromo;
 
 
-
+- (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize;
 @property (nonatomic) NSUInteger pageIndex;
 @property NSString *titleText;
 @property NSString *imageFile;

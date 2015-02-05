@@ -15,7 +15,6 @@
 
 @implementation FavoritesViewController
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -25,6 +24,9 @@
 	NSManagedObjectContext *managedObjectContext = [self managedObjectContext];
 	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc]initWithEntityName:@"Promo"];
 	self.promos = [[managedObjectContext executeFetchRequest:fetchRequest error:nil]mutableCopy];
+	
+	CHTCollectionViewWaterfallLayout* customLayout = (CHTCollectionViewWaterfallLayout*)self.collectionPromo.collectionViewLayout;
+	customLayout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -68,7 +70,15 @@
 	selectedBackgroundView.backgroundColor = [UIColor clearColor];   // no indication of selection
 	cell.selectedBackgroundView = selectedBackgroundView;
 	
-	[cell.poster setImage:[UIImage imageNamed:[promo valueForKey:@"poster_small"]]];
+	UIImage *image = [UIImage imageNamed:[promo valueForKey:@"poster_small"]];
+	CGFloat ratio=(image.size.height/image.size.width);
+	CGRect imageViewFrame = CGRectMake(0, 0, (self.view.frame.size.width-25)/2, ratio*(self.view.frame.size.width-25)/2);
+	cell.poster.frame = imageViewFrame;
+	CGSize size = CGSizeMake((self.view.frame.size.width-25)/2, ratio*(self.view.frame.size.width-25)/2);
+	image=[self imageWithImage:image scaledToSize:size];
+	
+	
+	[cell.poster setImage:image];
 	[cell.title setText:[promo valueForKey:@"title"]];
 	[cell.brand setText:[promo valueForKey:@"brand"]];
 	[cell.brandLogo_small setImage:[UIImage imageNamed:[promo valueForKey:@"brand_logo"]]];
@@ -87,7 +97,14 @@
 	return size;
 }
 
-
+- (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize
+{
+	UIGraphicsBeginImageContext(newSize);
+	[image drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
+	UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+	UIGraphicsEndImageContext();
+	return newImage;
+}
 
 - (NSManagedObjectContext *)managedObjectContext
 {

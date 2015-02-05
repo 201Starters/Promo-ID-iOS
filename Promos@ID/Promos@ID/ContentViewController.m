@@ -3,7 +3,7 @@
 //  Promos@ID
 //
 //  Created by Farandi Kusumo on 1/16/15.
-//  Copyright (c) 2015 Farandi Kusumo. All rights reserved.
+//  Copyright (c) 2515 Farandi Kusumo. All rights reserved.
 //
 
 #import "ContentViewController.h"
@@ -25,9 +25,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.titleLabel.text = self.titleText;
-    
-//    PintCollectionViewLayout* customLayout = (PintCollectionViewLayout*)self.collectionPromo.collectionViewLayout;
-//    customLayout.interitemSpacing = 14.0;
+    /*CHTCollectionViewWaterfallLayout *layout = [[CHTCollectionViewWaterfallLayout alloc] init];
+    layout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
+    _collectionPromo = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layout];*/
+    CHTCollectionViewWaterfallLayout* customLayout = (CHTCollectionViewWaterfallLayout*)self.collectionPromo.collectionViewLayout;
+    customLayout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
     
     [self initiateVariable];
 }
@@ -64,11 +66,27 @@
     selectedBackgroundView.backgroundColor = [UIColor clearColor];   // no indication of selection
     cell.selectedBackgroundView = selectedBackgroundView;
     
-    cell.poster.image = [UIImage imageNamed:promo.poster_small];
+    
+    UIImage*image=[UIImage imageNamed:promo.poster_small];
+    CGFloat ratio=(image.size.height/image.size.width);
+    CGRect imageViewFrame = CGRectMake(0, 0, (self.view.frame.size.width-25)/2, ratio*(self.view.frame.size.width-25)/2);
+    cell.poster.frame = imageViewFrame;
+    CGSize size = CGSizeMake((self.view.frame.size.width-25)/2, ratio*(self.view.frame.size.width-25)/2);
+    image=[self imageWithImage:image scaledToSize:size];
+    cell.poster.image = image;
     cell.title.text = promo.title;
 	cell.brand.text = promo.brand;
 	cell.brandLogo_small.image = [UIImage imageNamed:promo.brand_logo];
     return cell;
+}
+
+- (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize
+{
+    UIGraphicsBeginImageContext(newSize);
+    [image drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
 }
 
 #pragma mark - UICollectionViewDelegate
@@ -79,7 +97,8 @@
     promo = [promos objectAtIndex:indexPath.item];
     UIImage *image;
     image = [UIImage imageNamed:promo.poster_small];
-    CGSize size = CGSizeMake(self.view.frame.size.width / 2.2, image.size.height + 80);
+    CGFloat ratio=(image.size.height/image.size.width);
+    CGSize size = CGSizeMake((self.view.frame.size.width-25) / 2, ((ratio*self.view.frame.size.width-25)/2)+ 125);
     return size;
 }
 
@@ -129,8 +148,30 @@
     testing_promo.poster_big  = @"";
     testing_promo.desc      = @"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum";
     
-    promos = [NSArray arrayWithObjects:etude_EOYSale,mandiri_discount,cinema21_promo, testing_promo, nil];
+    testing_promo = [Promo new];
+    testing_promo.title = @"Testing Promo";
+    testing_promo.brand     = @"GI";
+    testing_promo.brand_logo= @"grand_indonesia.png";
+    testing_promo.shop      = [NSArray arrayWithObjects:@"", nil];
+    testing_promo.location  = [NSArray arrayWithObjects:@"", nil];
+    testing_promo.poster_small= @"grand_indonesia.png";
+    testing_promo.poster_big  = @"";
+    testing_promo.desc      = @"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum";
+    
+    testing_promo = [Promo new];
+    testing_promo.title = @"Testing Promo";
+    testing_promo.brand     = @"GI";
+    testing_promo.brand_logo= @"grand_indonesia.png";
+    testing_promo.shop      = [NSArray arrayWithObjects:@"", nil];
+    testing_promo.location  = [NSArray arrayWithObjects:@"", nil];
+    testing_promo.poster_small= @"grand_indonesia.png";
+    testing_promo.poster_big  = @"";
+    testing_promo.desc      = @"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum";
+    
+    promos = [NSArray arrayWithObjects:etude_EOYSale,mandiri_discount,cinema21_promo, testing_promo, testing_promo, testing_promo, nil];
 }
+
+
 
 
 #pragma mark - Navigation

@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 @property (weak, nonatomic) IBOutlet UITableView *stores;
 - (IBAction)favorites:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *favoriteButton;
 
 
 @property (strong,nonatomic) Promo *promo;

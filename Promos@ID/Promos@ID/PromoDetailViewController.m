@@ -10,11 +10,14 @@
 #import "PromoDetailViewController.h"
 
 @interface PromoDetailViewController ()
-
+@property (strong) NSMutableArray *promos;
 @end
 
 @implementation PromoDetailViewController
-
+{
+	BOOL _favorited;
+	int _indexFavorited;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -44,6 +47,22 @@
 	self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width, self.view.frame.size.height * 2);
 	
 	self.title = @"Detail Promo";
+	
+	//Fetch data from CoreData
+	NSManagedObjectContext *managedObjectContext = [self managedObjectContext];
+	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc]initWithEntityName:@"Promo"];
+	self.promos = [[managedObjectContext executeFetchRequest:fetchRequest error:nil]mutableCopy];
+	
+	for (int i = 0; i<self.promos.count; i++) {
+		NSManagedObject *array = [self.promos objectAtIndex:i];
+		if ([[NSString stringWithFormat:@"%@",[array valueForKey:@"title"] ] isEqualToString:self.promo.title]) {
+			self.favoriteButton.tintColor = [UIColor orangeColor];
+			_favorited = YES;
+			_indexFavorited = i;
+			break;
+		}
+	}
+	
 }
 
 - (void)didReceiveMemoryWarning {
@@ -63,26 +82,43 @@
 
 - (IBAction)favorites:(id)sender {
 	NSManagedObjectContext *context = [self managedObjectContext];
-	
-	NSManagedObject *promo = [NSEntityDescription insertNewObjectForEntityForName:@"Promo" inManagedObjectContext:context];
-	[promo setValue:self.promo.title forKey:@"title"];
-	[promo setValue:self.promo.brand forKey:@"brand"];
-	[promo setValue:self.promo.brand_logo forKey:@"brand_logo"];
-	[promo setValue:self.promo.desc	forKey:@"desc"];
-	[promo setValue:self.promo.poster_big forKey:@"poster_big"];
-	[promo setValue:self.promo.poster_small forKey:@"poster_small"];
-	
-	NSError *error = nil;
-	if (![context save:&error]) {
-		NSLog(@"Error saving to CoreData ! %@ %@",error,[error localizedDescription]);
+	if (!_favorited) {
+		NSManagedObject *promo = [NSEntityDescription insertNewObjectForEntityForName:@"Promo" inManagedObjectContext:context];
+		[promo setValue:self.promo.title forKey:@"title"];
+		[promo setValue:self.promo.brand forKey:@"brand"];
+		[promo setValue:self.promo.brand_logo forKey:@"brand_logo"];
+		[promo setValue:self.promo.desc	forKey:@"desc"];
+		[promo setValue:self.promo.poster_big forKey:@"poster_big"];
+		[promo setValue:self.promo.poster_small forKey:@"poster_small"];
+		
+		NSError *error = nil;
+		if (![context save:&error]) {
+			NSLog(@"Error saving to CoreData ! %@ %@",error,[error localizedDescription]);
+		}
+		
+		UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Favorites"
+													   message:[NSString stringWithFormat:@"You saved %@ as favorite",self.promo.title]
+													  delegate:self
+											 cancelButtonTitle:@"OK"
+											 otherButtonTitles:nil, nil];
+		[alert show];
+		self.favoriteButton.tintColor = [UIColor orangeColor];
+		_favorited = YES;
+	} else if (_favorited){
+		[context deleteObject:[self.promos objectAtIndex:_indexFavorited]];
+		NSError *error = nil;
+		if (![context save:&error]) {
+			NSLog(@"Error saving to CoreData ! %@ %@",error,[error localizedDescription]);
+		}
+		
+		UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Favorites"
+													   message:[NSString stringWithFormat:@"Promo %@ is removed from favorite list", self.promo.title]
+													  delegate:self
+											 cancelButtonTitle:@"OK"
+											 otherButtonTitles:nil, nil];
+		[alert show];
+		self.favoriteButton.tintColor = [UIColor blueColor];
 	}
-	
-	UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Favorites"
-												   message:@"You saved a promo as favorite"
-												  delegate:self
-										 cancelButtonTitle:@"OK"
-										 otherButtonTitles:nil, nil];
-	[alert show];
 }
 
 - (NSManagedObjectContext *)managedObjectContext {
