@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PSCollectionViewCell.h"
+
 
 @interface PromoViewCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *poster;

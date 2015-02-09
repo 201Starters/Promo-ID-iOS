@@ -7,9 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PSCollectionView.h"
 #import "PNCollectionCellBackgroundView.h"
-#import "PintCollectionViewLayout.h"
 #import "CHTCollectionViewWaterfallLayout.h"
 
 @interface ContentViewController : UIViewController <UICollectionViewDataSource, CHTCollectionViewDelegateWaterfallLayout>

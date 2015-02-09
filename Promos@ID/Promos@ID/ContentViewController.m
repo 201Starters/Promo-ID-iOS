@@ -10,6 +10,7 @@
 #import "Promo.h"
 #import "PromoViewCell.h"
 #import "PromoDetailViewController.h"
+#import "UITabBarController+hidable.h"
 
 @interface ContentViewController ()
 
@@ -17,12 +18,16 @@
 
 @implementation ContentViewController{
     NSArray *promos;
+	CGFloat startContentOffset;
+	CGFloat lastContentOffset;
+	BOOL hidden;
 }
 @synthesize pageIndex;
 //@synthesize promoView;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+	hidden = NO;
     // Do any additional setup after loading the view.
     self.titleLabel.text = self.titleText;
     /*CHTCollectionViewWaterfallLayout *layout = [[CHTCollectionViewWaterfallLayout alloc] init];
@@ -32,6 +37,22 @@
     customLayout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
     
     [self initiateVariable];
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+	[super viewWillAppear:animated];
+	
+	[self.navigationController setNavigationBarHidden:hidden
+											 animated:YES];
+	
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+	[super viewDidAppear:animated];
+	[self.tabBarController setTabBarHidden:hidden
+								  animated:NO];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -191,6 +212,73 @@
 		PromoDetailViewController *destViewController = segue.destinationViewController;
 		destViewController.promo = promo;
 	}
+}
+
+#pragma mark - Hide TabBar and NavBar
+
+-(void)expand
+{
+	if(hidden)
+		return;
+	
+	hidden = YES;
+	
+	[self.tabBarController setTabBarHidden:YES
+								  animated:YES];
+	
+	[self.navigationController setNavigationBarHidden:YES
+											 animated:YES];
+	[[NSNotificationCenter defaultCenter]postNotificationName:@"expandState" object:self];
+}
+
+-(void)contract
+{
+	if(!hidden)
+		return;
+	
+	hidden = NO;
+	
+	[self.tabBarController setTabBarHidden:NO
+								  animated:YES];
+	
+	[self.navigationController setNavigationBarHidden:NO
+											 animated:YES];
+	[[NSNotificationCenter defaultCenter]postNotificationName:@"contractState" object:self];
+}
+
+#pragma mark UIScrollViewDelegate Methods
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+	startContentOffset = lastContentOffset = scrollView.contentOffset.y;
+	//NSLog(@"scrollViewWillBeginDragging: %f", scrollView.contentOffset.y);
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+	CGFloat currentOffset = scrollView.contentOffset.y;
+	CGFloat differenceFromStart = startContentOffset - currentOffset;
+	CGFloat differenceFromLast = lastContentOffset - currentOffset;
+	lastContentOffset = currentOffset;
+	
+	
+	
+	if((differenceFromStart) < 0)
+	{
+		// scroll up
+		if(scrollView.isTracking && (abs(differenceFromLast)>1))
+			[self expand];
+	}
+	else {
+		if(scrollView.isTracking && (abs(differenceFromLast)>1))
+			[self contract];
+	}
+	
+}
+- (BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView
+{
+	[self contract];
+	return YES;
 }
 
 

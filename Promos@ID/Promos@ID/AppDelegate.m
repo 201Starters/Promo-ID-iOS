@@ -22,13 +22,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    UIPageControl *pageControl = [UIPageControl appearance];
-    UIColor *indicatorTintColor = [UIColor colorWithRed:255/255.0 green:205/255.0 blue:119/255.0 alpha:1.0];
-    
-    pageControl.pageIndicatorTintColor = indicatorTintColor;
-    pageControl.currentPageIndicatorTintColor = [UIColor orangeColor];
-    pageControl.backgroundColor = [UIColor whiteColor];
-    
+    	
     
     self.locationManager = [[CLLocationManager alloc]init];
     self.locationManager.delegate = self;

@@ -11,6 +11,7 @@
 #import "Shop.h"
 #import "ShopDetailViewController.h"
 #import "PromoDetailViewController.h"
+#import "UITabBarController+hidable.h"
 
 @interface VenueDetailViewController ()
 @property (strong,nonatomic) UITableView *tableView;
@@ -20,11 +21,16 @@
 {
 	NSArray *promos;
 	NSArray *shops;
+	CGFloat startContentOffset;
+	CGFloat lastContentOffset;
+	BOOL hidden;
 }
 @synthesize tableContent;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+	hidden = NO;
+	
     self.title = self.venue.name;
     self.addressLabel.textColor = [UIColor whiteColor];
     self.addressLabel.text = self.venue.location;
@@ -34,6 +40,19 @@
 	customLayout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
 	
 	[self initiateVariable];
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+	[super viewWillAppear:animated];
+	[self.navigationController setNavigationBarHidden:hidden animated:YES];
+	
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+	[super viewDidAppear:animated];
+	[self.tabBarController setTabBarHidden:hidden animated:NO];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -89,6 +108,7 @@
 	Shop *shop = nil;
 	shop = [shops objectAtIndex:indexPath.row];
 	cell.textLabel.text = shop.name;
+	NSLog(@"position x = %f ; y = %f",cell.textLabel.frame.origin.x,cell.textLabel.frame.origin.y);
 	return cell;
 }
 
@@ -152,11 +172,6 @@
 	CGSize size = CGSizeMake(self.view.frame.size.width / 2.2, image.size.height + 80);
 	return size;
 }
-
-
-
-
-
 
 
 // Segmented Control - Change View
@@ -249,6 +264,73 @@
 	shops = [NSArray arrayWithObjects:iBox,uniqlo,zara, nil];
 
 }
+#pragma mark - Hide TabBar and NavBar
 
+-(void)expand
+{
+	if(hidden)
+		return;
+	
+	hidden = YES;
+	
+	[self.tabBarController setTabBarHidden:YES
+								  animated:YES];
+	
+	[self.navigationController setNavigationBarHidden:YES
+											 animated:YES];
+	[[NSNotificationCenter defaultCenter]postNotificationName:@"expandState" object:self];
+}
 
+-(void)contract
+{
+	if(!hidden)
+		return;
+	
+	hidden = NO;
+	
+	[self.tabBarController setTabBarHidden:NO
+								  animated:YES];
+	
+	[self.navigationController setNavigationBarHidden:NO
+											 animated:YES];
+	[[NSNotificationCenter defaultCenter]postNotificationName:@"contractState" object:self];
+}
+
+#pragma mark - UIScrollViewDelegate Methods
+
+-(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+	//if (scrollView==self.collectionPromo) {
+		startContentOffset = lastContentOffset = scrollView.contentOffset.y;
+	//}
+}
+
+-(void)scrollViewDidZoom:(UIScrollView *)scrollView
+{
+	//if (scrollView==self.collectionPromo) {
+		CGFloat currentOffset = scrollView.contentOffset.y;
+		CGFloat differenceFromStart = startContentOffset - currentOffset;
+		CGFloat differenceFromLast = lastContentOffset - currentOffset;
+		lastContentOffset = currentOffset;
+		
+		
+		
+		if((differenceFromStart) < 0)
+		{
+			// scroll up
+			if(scrollView.isTracking && (abs(differenceFromLast)>1))
+				[self expand];
+		}
+		else {
+			if(scrollView.isTracking && (abs(differenceFromLast)>1))
+				[self contract];
+		}
+	//}
+}
+
+- (BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView
+{
+	[self contract];
+	return YES;
+}
 @end

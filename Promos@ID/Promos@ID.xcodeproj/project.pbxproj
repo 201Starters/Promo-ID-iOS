@@ -22,9 +22,6 @@
 		251718BF1A718500006D15A4 /* etudeEOYSale.png in Resources */ = {isa = PBXBuildFile; fileRef = 251718BC1A718500006D15A4 /* etudeEOYSale.png */; };
 		251718C01A718500006D15A4 /* mandiriDiscount.png in Resources */ = {isa = PBXBuildFile; fileRef = 251718BD1A718500006D15A4 /* mandiriDiscount.png */; };
 		251718C11A718500006D15A4 /* promo2.png in Resources */ = {isa = PBXBuildFile; fileRef = 251718BE1A718500006D15A4 /* promo2.png */; };
-		251718C71A71FF09006D15A4 /* PSCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 251718C31A71FF09006D15A4 /* PSCollectionView.m */; };
-		251718C81A71FF09006D15A4 /* PSCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 251718C51A71FF09006D15A4 /* PSCollectionViewCell.m */; };
-		251718C91A71FF09006D15A4 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 251718C61A71FF09006D15A4 /* README.md */; };
 		251718CC1A71FF8D006D15A4 /* PromoViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 251718CB1A71FF8D006D15A4 /* PromoViewCell.m */; };
 		25176AC81A6943D6009CE3CE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 25176AC71A6943D6009CE3CE /* main.m */; };
 		25176ACB1A6943D6009CE3CE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 25176ACA1A6943D6009CE3CE /* AppDelegate.m */; };
@@ -44,9 +41,9 @@
 		251D19BB1A7E730000878C21 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 251D19BA1A7E730000878C21 /* CoreData.framework */; };
 		251D19BE1A7E735700878C21 /* Promos@ID.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 251D19BC1A7E735700878C21 /* Promos@ID.xcdatamodeld */; };
 		251D19C11A7E80A100878C21 /* FavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 251D19C01A7E80A100878C21 /* FavoritesViewController.m */; };
-		2528CBBF1A78C5960035D3D1 /* PintCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 2528CBBC1A78C5960035D3D1 /* PintCollectionViewLayout.m */; };
-		2528CBC01A78C5960035D3D1 /* PNCollectionCellBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2528CBBE1A78C5960035D3D1 /* PNCollectionCellBackgroundView.m */; };
 		2528CBC31A78F7280035D3D1 /* PromoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2528CBC21A78F7280035D3D1 /* PromoDetailViewController.m */; };
+		25A93A571A83815E00B24EA0 /* UITabBarController+hidable.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A93A561A83815E00B24EA0 /* UITabBarController+hidable.m */; };
+		25A93A5A1A839CA700B24EA0 /* PNCollectionCellBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A93A591A839CA700B24EA0 /* PNCollectionCellBackgroundView.m */; };
 		413C6A1D1A80645800F0D6C5 /* CHTCollectionViewWaterfallCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 413C6A1A1A80645800F0D6C5 /* CHTCollectionViewWaterfallCell.m */; };
 		413C6A1E1A80645800F0D6C5 /* CHTCollectionViewWaterfallLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 413C6A1C1A80645800F0D6C5 /* CHTCollectionViewWaterfallLayout.m */; };
 /* End PBXBuildFile section */
@@ -83,11 +80,6 @@
 		251718BC1A718500006D15A4 /* etudeEOYSale.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = etudeEOYSale.png; sourceTree = "<group>"; };
 		251718BD1A718500006D15A4 /* mandiriDiscount.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mandiriDiscount.png; sourceTree = "<group>"; };
 		251718BE1A718500006D15A4 /* promo2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = promo2.png; sourceTree = "<group>"; };
-		251718C21A71FF09006D15A4 /* PSCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSCollectionView.h; sourceTree = "<group>"; };
-		251718C31A71FF09006D15A4 /* PSCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSCollectionView.m; sourceTree = "<group>"; };
-		251718C41A71FF09006D15A4 /* PSCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSCollectionViewCell.h; sourceTree = "<group>"; };
-		251718C51A71FF09006D15A4 /* PSCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSCollectionViewCell.m; sourceTree = "<group>"; };
-		251718C61A71FF09006D15A4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		251718CA1A71FF8D006D15A4 /* PromoViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PromoViewCell.h; sourceTree = "<group>"; };
 		251718CB1A71FF8D006D15A4 /* PromoViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PromoViewCell.m; sourceTree = "<group>"; };
 		25176AC21A6943D6009CE3CE /* Promos@ID.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Promos@ID.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,12 +110,12 @@
 		251D19BD1A7E735700878C21 /* Promos@ID.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Promos@ID.xcdatamodel"; sourceTree = "<group>"; };
 		251D19BF1A7E80A100878C21 /* FavoritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesViewController.h; sourceTree = "<group>"; };
 		251D19C01A7E80A100878C21 /* FavoritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesViewController.m; sourceTree = "<group>"; };
-		2528CBBB1A78C5960035D3D1 /* PintCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PintCollectionViewLayout.h; sourceTree = "<group>"; };
-		2528CBBC1A78C5960035D3D1 /* PintCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PintCollectionViewLayout.m; sourceTree = "<group>"; };
-		2528CBBD1A78C5960035D3D1 /* PNCollectionCellBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNCollectionCellBackgroundView.h; sourceTree = "<group>"; };
-		2528CBBE1A78C5960035D3D1 /* PNCollectionCellBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNCollectionCellBackgroundView.m; sourceTree = "<group>"; };
 		2528CBC11A78F7280035D3D1 /* PromoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PromoDetailViewController.h; sourceTree = "<group>"; };
 		2528CBC21A78F7280035D3D1 /* PromoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PromoDetailViewController.m; sourceTree = "<group>"; };
+		25A93A551A83815E00B24EA0 /* UITabBarController+hidable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBarController+hidable.h"; sourceTree = "<group>"; };
+		25A93A561A83815E00B24EA0 /* UITabBarController+hidable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBarController+hidable.m"; sourceTree = "<group>"; };
+		25A93A581A839CA700B24EA0 /* PNCollectionCellBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNCollectionCellBackgroundView.h; sourceTree = "<group>"; };
+		25A93A591A839CA700B24EA0 /* PNCollectionCellBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNCollectionCellBackgroundView.m; sourceTree = "<group>"; };
 		413C6A191A80645800F0D6C5 /* CHTCollectionViewWaterfallCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTCollectionViewWaterfallCell.h; sourceTree = "<group>"; };
 		413C6A1A1A80645800F0D6C5 /* CHTCollectionViewWaterfallCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTCollectionViewWaterfallCell.m; sourceTree = "<group>"; };
 		413C6A1B1A80645800F0D6C5 /* CHTCollectionViewWaterfallLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTCollectionViewWaterfallLayout.h; sourceTree = "<group>"; };
@@ -166,18 +158,6 @@
 			name = Object;
 			sourceTree = "<group>";
 		};
-		251718A81A710A96006D15A4 /* PSCollectionView */ = {
-			isa = PBXGroup;
-			children = (
-				251718C21A71FF09006D15A4 /* PSCollectionView.h */,
-				251718C31A71FF09006D15A4 /* PSCollectionView.m */,
-				251718C41A71FF09006D15A4 /* PSCollectionViewCell.h */,
-				251718C51A71FF09006D15A4 /* PSCollectionViewCell.m */,
-				251718C61A71FF09006D15A4 /* README.md */,
-			);
-			name = PSCollectionView;
-			sourceTree = "<group>";
-		};
 		25176AB91A6943D6009CE3CE = {
 			isa = PBXGroup;
 			children = (
@@ -204,9 +184,8 @@
 		25176AC41A6943D6009CE3CE /* Promos@ID */ = {
 			isa = PBXGroup;
 			children = (
-				413C6A181A80643000F0D6C5 /* PinteresLayout */,
-				2528CBBA1A78C56A0035D3D1 /* JSPint */,
-				251718A81A710A96006D15A4 /* PSCollectionView */,
+				25A93A4E1A837D3800B24EA0 /* ExpandingView */,
+				413C6A181A80643000F0D6C5 /* PinterestLayout */,
 				2517188F1A6FAB13006D15A4 /* Object */,
 				25176AC91A6943D6009CE3CE /* AppDelegate.h */,
 				25176ACA1A6943D6009CE3CE /* AppDelegate.m */,
@@ -278,6 +257,7 @@
 		25176B071A6E3A38009CE3CE /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				25A93A5B1A87787500B24EA0 /* Icons */,
 				251494161A6E5FA800DB0D4B /* grand_indonesia.png */,
 				251718BC1A718500006D15A4 /* etudeEOYSale.png */,
 				251718BD1A718500006D15A4 /* mandiriDiscount.png */,
@@ -291,26 +271,33 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
-		2528CBBA1A78C56A0035D3D1 /* JSPint */ = {
+		25A93A4E1A837D3800B24EA0 /* ExpandingView */ = {
 			isa = PBXGroup;
 			children = (
-				2528CBBB1A78C5960035D3D1 /* PintCollectionViewLayout.h */,
-				2528CBBC1A78C5960035D3D1 /* PintCollectionViewLayout.m */,
-				2528CBBD1A78C5960035D3D1 /* PNCollectionCellBackgroundView.h */,
-				2528CBBE1A78C5960035D3D1 /* PNCollectionCellBackgroundView.m */,
+				25A93A551A83815E00B24EA0 /* UITabBarController+hidable.h */,
+				25A93A561A83815E00B24EA0 /* UITabBarController+hidable.m */,
 			);
-			name = JSPint;
+			name = ExpandingView;
 			sourceTree = "<group>";
 		};
-		413C6A181A80643000F0D6C5 /* PinteresLayout */ = {
+		25A93A5B1A87787500B24EA0 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+			);
+			name = Icons;
+			sourceTree = "<group>";
+		};
+		413C6A181A80643000F0D6C5 /* PinterestLayout */ = {
+			isa = PBXGroup;
+			children = (
+				25A93A581A839CA700B24EA0 /* PNCollectionCellBackgroundView.h */,
+				25A93A591A839CA700B24EA0 /* PNCollectionCellBackgroundView.m */,
 				413C6A191A80645800F0D6C5 /* CHTCollectionViewWaterfallCell.h */,
 				413C6A1A1A80645800F0D6C5 /* CHTCollectionViewWaterfallCell.m */,
 				413C6A1B1A80645800F0D6C5 /* CHTCollectionViewWaterfallLayout.h */,
 				413C6A1C1A80645800F0D6C5 /* CHTCollectionViewWaterfallLayout.m */,
 			);
-			name = PinteresLayout;
+			name = PinterestLayout;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -423,13 +410,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25A93A5A1A839CA700B24EA0 /* PNCollectionCellBackgroundView.m in Sources */,
 				251718951A6FC733006D15A4 /* ShopViewController.m in Sources */,
-				2528CBBF1A78C5960035D3D1 /* PintCollectionViewLayout.m in Sources */,
+				25A93A571A83815E00B24EA0 /* UITabBarController+hidable.m in Sources */,
 				413C6A1D1A80645800F0D6C5 /* CHTCollectionViewWaterfallCell.m in Sources */,
 				251D19C11A7E80A100878C21 /* FavoritesViewController.m in Sources */,
 				2517189E1A70C84E006D15A4 /* ShopDetailViewController.m in Sources */,
 				251718CC1A71FF8D006D15A4 /* PromoViewCell.m in Sources */,
-				251718C71A71FF09006D15A4 /* PSCollectionView.m in Sources */,
 				25176AFB1A695BF6009CE3CE /* ContentViewController.m in Sources */,
 				251718A71A70FDBC006D15A4 /* Promo.m in Sources */,
 				251D19BE1A7E735700878C21 /* Promos@ID.xcdatamodeld in Sources */,
@@ -438,11 +425,8 @@
 				2528CBC31A78F7280035D3D1 /* PromoDetailViewController.m in Sources */,
 				25176AD11A6943D6009CE3CE /* VenueViewController.m in Sources */,
 				251718921A6FAB42006D15A4 /* Venue.m in Sources */,
-				251718C81A71FF09006D15A4 /* PSCollectionViewCell.m in Sources */,
 				25176ACB1A6943D6009CE3CE /* AppDelegate.m in Sources */,
 				25176AF01A694C80009CE3CE /* MainTabBarViewController.m in Sources */,
-				251718C91A71FF09006D15A4 /* README.md in Sources */,
-				2528CBC01A78C5960035D3D1 /* PNCollectionCellBackgroundView.m in Sources */,
 				25176ACE1A6943D6009CE3CE /* PromoViewController.m in Sources */,
 				413C6A1E1A80645800F0D6C5 /* CHTCollectionViewWaterfallLayout.m in Sources */,
 				25176AC81A6943D6009CE3CE /* main.m in Sources */,

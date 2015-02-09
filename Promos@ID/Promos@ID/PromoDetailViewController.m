@@ -8,6 +8,7 @@
 
 @import CoreData;
 #import "PromoDetailViewController.h"
+#import "UITabBarController+hidable.h"
 
 @interface PromoDetailViewController ()
 @property (strong) NSMutableArray *promos;
@@ -46,6 +47,10 @@
 	
 	self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width, self.view.frame.size.height * 2);
 	
+	[self.favoriteButton setFrame:CGRectMake(self.favoriteButton.frame.origin.x, self.favoriteButton.frame.origin.y, 30, 30)];
+	[self.favoriteButton setImage:[UIImage imageNamed:@"fave.png"] forState:UIControlStateNormal];
+	[self.favoriteButton setImage:[UIImage imageNamed:@"fave.png"] forState:UIControlStateSelected];
+	[self.favoriteButton setImage:[UIImage imageNamed:@"fave.png"] forState:UIControlStateHighlighted];
 	self.title = @"Detail Promo";
 	
 	//Fetch data from CoreData
@@ -56,13 +61,29 @@
 	for (int i = 0; i<self.promos.count; i++) {
 		NSManagedObject *array = [self.promos objectAtIndex:i];
 		if ([[NSString stringWithFormat:@"%@",[array valueForKey:@"title"] ] isEqualToString:self.promo.title]) {
-			self.favoriteButton.tintColor = [UIColor orangeColor];
+			[self.favoriteButton setImage:[UIImage imageNamed:@"fave_highlighted.png"] forState:UIControlStateNormal];
+			[self.favoriteButton setImage:[UIImage imageNamed:@"fave_highlighted.png"] forState:UIControlStateSelected];
+			[self.favoriteButton setImage:[UIImage imageNamed:@"fave_highlighted.png"] forState:UIControlStateHighlighted];
+			
 			_favorited = YES;
 			_indexFavorited = i;
 			break;
 		}
 	}
 	
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+	[super viewWillAppear:animated];
+	[self.navigationController setNavigationBarHidden:NO animated:YES];
+	
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+	[super viewDidAppear:animated];
+	[self.tabBarController setTabBarHidden:NO animated:NO];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -102,7 +123,9 @@
 											 cancelButtonTitle:@"OK"
 											 otherButtonTitles:nil, nil];
 		[alert show];
-		self.favoriteButton.tintColor = [UIColor orangeColor];
+		[self.favoriteButton setImage:[UIImage imageNamed:@"fave_highlighted.png"] forState:UIControlStateNormal];
+		[self.favoriteButton setImage:[UIImage imageNamed:@"fave_highlighted.png"] forState:UIControlStateSelected];
+		[self.favoriteButton setImage:[UIImage imageNamed:@"fave_highlighted.png"] forState:UIControlStateHighlighted];
 		_favorited = YES;
 	} else if (_favorited){
 		[context deleteObject:[self.promos objectAtIndex:_indexFavorited]];
@@ -117,7 +140,10 @@
 											 cancelButtonTitle:@"OK"
 											 otherButtonTitles:nil, nil];
 		[alert show];
-		self.favoriteButton.tintColor = [UIColor blueColor];
+		[self.favoriteButton setImage:[UIImage imageNamed:@"fave.png"] forState:UIControlStateNormal];
+		[self.favoriteButton setImage:[UIImage imageNamed:@"fave.png"] forState:UIControlStateSelected];
+		[self.favoriteButton setImage:[UIImage imageNamed:@"fave.png"] forState:UIControlStateHighlighted];
+		_favorited = NO;
 	}
 }
 

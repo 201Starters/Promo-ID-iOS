@@ -9,6 +9,7 @@
 #import "VenueViewController.h"
 #import "Venue.h"
 #import "VenueDetailViewController.h"
+#import "UITabBarController+hidable.h"
 
 @interface VenueViewController ()
 
@@ -18,18 +19,38 @@
     NSArray *venues;
     NSArray *searchResults;
     NSDictionary *venueDict;
+	CGFloat startContentOffset;
+	CGFloat lastContentOffset;
+	BOOL hidden;
 }
 @synthesize tableView;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
     [self initiateVariable];
-    
+	hidden = NO;
+	
     self.navigationController.navigationBar.barTintColor = [UIColor orangeColor];
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
 }
+
+//-(void)viewWillAppear:(BOOL)animated
+//{
+//	[super viewWillAppear:animated];
+//	
+//	[self.navigationController setNavigationBarHidden:hidden
+//											 animated:YES];
+//	
+//}
+//
+//-(void)viewDidAppear:(BOOL)animated
+//{
+//	[super viewDidAppear:animated];
+//	[self.tabBarController setTabBarHidden:hidden
+//								  animated:NO];
+//}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -137,5 +158,72 @@
     
     venues = [NSArray arrayWithObjects:kelapa_gading,pondok_indah,grand_indonesia, nil];
 }
+//
+//#pragma mark - Hide TabBar and NavBar
+//
+//-(void)expand
+//{
+//	if(hidden)
+//		return;
+//	
+//	hidden = YES;
+//	
+//	[self.tabBarController setTabBarHidden:YES
+//								  animated:YES];
+//	
+//	[self.navigationController setNavigationBarHidden:YES
+//											 animated:YES];
+//}
+//
+//-(void)contract
+//{
+//	if(!hidden)
+//		return;
+//	
+//	hidden = NO;
+//	
+//	[self.tabBarController setTabBarHidden:NO
+//								  animated:YES];
+//	
+//	[self.navigationController setNavigationBarHidden:NO
+//											 animated:YES];
+//}
+//
+//#pragma mark UIScrollViewDelegate Methods
+//
+//- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+//{
+//	startContentOffset = lastContentOffset = scrollView.contentOffset.y;
+//	//NSLog(@"scrollViewWillBeginDragging: %f", scrollView.contentOffset.y);
+//}
+//
+//- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+//{
+//	CGFloat currentOffset = scrollView.contentOffset.y;
+//	CGFloat differenceFromStart = startContentOffset - currentOffset;
+//	CGFloat differenceFromLast = lastContentOffset - currentOffset;
+//	lastContentOffset = currentOffset;
+//	
+//	
+//	
+//	if((differenceFromStart) < 0)
+//	{
+//		// scroll up
+//		if(scrollView.isTracking && (abs(differenceFromLast)>1))
+//			[self expand];
+//	}
+//	else {
+//		if(scrollView.isTracking && (abs(differenceFromLast)>1))
+//			[self contract];
+//	}
+//	
+//}
+//- (BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView
+//{
+//	[self contract];
+//	return YES;
+//}
+//
+//
 
 @end

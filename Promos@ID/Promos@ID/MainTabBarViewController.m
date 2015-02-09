@@ -31,9 +31,9 @@
         }
     }
     
-    self.tabBarController.tabBar.barTintColor = [UIColor whiteColor];
+    self.tabBarController.tabBar.barTintColor = [UIColor clearColor];
     self.tabBarController.tabBar.tintColor = [UIColor orangeColor];
-
+	self.tabBarController.tabBar.translucent = YES;
 }
 
 - (void)didReceiveMemoryWarning {

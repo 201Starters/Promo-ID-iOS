@@ -10,6 +10,7 @@
 #import "ContentViewController.h"
 
 @interface PromoViewController : UIViewController <UIPageViewControllerDataSource, UIPageViewControllerDelegate>
+@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 - (IBAction)startWalkthrough:(id)sender;

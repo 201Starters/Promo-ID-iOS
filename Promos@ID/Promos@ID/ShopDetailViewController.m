@@ -9,6 +9,7 @@
 #import "ShopDetailViewController.h"
 #import "Venue.h"
 #import "VenueDetailViewController.h"
+#import "UITabBarController+hidable.h"
 
 @interface ShopDetailViewController ()
 
@@ -27,6 +28,19 @@
     self.webLabel.text = self.shop.web;
 	
 	[self initiateVariable];
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+	[super viewWillAppear:animated];
+	[self.navigationController setNavigationBarHidden:NO animated:YES];
+	
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+	[super viewDidAppear:animated];
+	[self.tabBarController setTabBarHidden:NO animated:NO];
 }
 
 - (void)didReceiveMemoryWarning {
