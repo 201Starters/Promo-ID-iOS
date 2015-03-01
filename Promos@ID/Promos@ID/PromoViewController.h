@@ -13,11 +13,9 @@
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
-- (IBAction)startWalkthrough:(id)sender;
 @property (strong,nonatomic) UIPageViewController *pageViewController;
 @property (strong,nonatomic) NSArray *pageTitles;
 @property (strong,nonatomic) NSArray *pageImages;
-@property (weak,nonatomic) NSMutableString *userLocationString;
 
 @end
 

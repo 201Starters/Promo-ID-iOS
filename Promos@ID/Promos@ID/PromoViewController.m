@@ -8,13 +8,16 @@
 
 #import "PromoViewController.h"
 #import "AppDelegate.h"
+#import "Venue.h"
 @import CoreLocation;
 
 @interface PromoViewController ()
 
 @end
 
-@implementation PromoViewController
+@implementation PromoViewController{
+	NSArray *venues;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -24,12 +27,14 @@
                                                  name:@"newLocationNotif"
                                                object:nil];
 	
-	 [[NSNotificationCenter defaultCenter]addObserver:self
-											selector:@selector(expandContractState:)
-												name:@"expandState" object:nil];
 	[[NSNotificationCenter defaultCenter]addObserver:self
 											selector:@selector(expandContractState:)
-												name:@"contractState" object:nil];
+												name:@"expandState"
+											  object:nil];
+	[[NSNotificationCenter defaultCenter]addObserver:self
+											selector:@selector(expandContractState:)
+												name:@"contractState"
+											  object:nil];
 	
     // Initiate PageView
     
@@ -67,6 +72,8 @@
     self.tabBarController.tabBar.barTintColor = [UIColor colorWithRed:255.0 green:255.0 blue:255.0 alpha:0.2];
     self.tabBarController.tabBar.tintColor = [UIColor orangeColor];
 
+	//Initiate Dummy Variable
+	[self initiateVariable];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -140,8 +147,21 @@
 -(void)updatedLocation:(NSNotification*)notif
 {
     CLLocation *userLocation = (CLLocation*)[[notif userInfo] valueForKey:@"newLocationResult"];
-    self.userLocationString = [NSMutableString stringWithFormat:@"%.3f,%.3f",userLocation.coordinate.latitude,userLocation.coordinate.longitude];
-    [self.locationLabel setText:[NSMutableString stringWithFormat:@"You're near %.6f,%.6f",userLocation.coordinate.latitude,userLocation.coordinate.longitude]];
+	Venue *venue = nil;
+	CLLocationDistance shortest = DBL_MAX;
+	NSString *shortestLocation;
+	for (int a = 0; a < venues.count; a++) {
+		venue = [venues objectAtIndex:a];
+		CLLocation *venuesLocation = venue.latlong;
+
+		CLLocationDistance distance = [venuesLocation distanceFromLocation:userLocation];
+		if (distance < shortest) {
+			shortest = distance;
+			shortestLocation = venue.name;
+		}
+	};
+	
+	[self.locationLabel setText:[NSMutableString stringWithFormat:@"You're near %@ (%.1f meters)",shortestLocation,shortest]];
 }
 
 #pragma mark - expand & contract view
@@ -170,4 +190,28 @@
 		//NSLog(@"contract");
 	}
 }
+
+#pragma mark - initial dummy variable
+
+-(void)initiateVariable
+{
+	Venue *kelapa_gading = [Venue new];
+	kelapa_gading.name = @"Mall Kelapa Gading";
+	kelapa_gading.latlong = [[CLLocation alloc]initWithLatitude: -6.157356
+													  longitude: 106.908571];
+	
+	Venue *pondok_indah = [Venue new];
+	pondok_indah.name = @"Pondok Indah Mall";
+	pondok_indah.latlong = [[CLLocation alloc]initWithLatitude: -6.265302
+													 longitude: 106.784561];
+	
+	Venue *grand_indonesia = [Venue new];
+	grand_indonesia.name = @"Grand Indonesia Shopping Town";
+	grand_indonesia.latlong = [[CLLocation alloc]initWithLatitude: -6.195140
+														longitude: 106.820316];
+	
+	
+	venues = [NSArray arrayWithObjects:kelapa_gading,pondok_indah,grand_indonesia, nil];
+}
+
 @end

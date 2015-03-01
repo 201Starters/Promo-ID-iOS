@@ -10,6 +10,7 @@
 #import "Venue.h"
 #import "VenueDetailViewController.h"
 #import "UITabBarController+hidable.h"
+@import CoreLocation;
 
 @interface VenueViewController ()
 
@@ -141,6 +142,8 @@
     kelapa_gading.image = @"kelapa_gading_mall.png";
     kelapa_gading.map = nil;
     kelapa_gading.store = nil;
+	kelapa_gading.latlong = [[CLLocation alloc]initWithLatitude: -6.21185572
+													  longitude: 106.92660746];
     
     Venue *pondok_indah = [Venue new];
     pondok_indah.name = @"Pondok Indah Mall";
@@ -148,6 +151,8 @@
     pondok_indah.image = @"pondok_indah_mall.png";
     pondok_indah.map = nil;
     pondok_indah.store = nil;
+	pondok_indah.latlong = [[CLLocation alloc]initWithLatitude: -10.21185572
+													 longitude: 110.92660746];
     
     Venue *grand_indonesia = [Venue new];
     grand_indonesia.name = @"Grand Indonesia Shopping Town";
@@ -155,7 +160,10 @@
     grand_indonesia.image = @"grand_indonesia.png";
     grand_indonesia.map = nil;
     grand_indonesia.store = nil;
-    
+	grand_indonesia.latlong = [[CLLocation alloc]initWithLatitude: -6.21185572
+														longitude: 120.92660746];
+	
+	
     venues = [NSArray arrayWithObjects:kelapa_gading,pondok_indah,grand_indonesia, nil];
 }
 //

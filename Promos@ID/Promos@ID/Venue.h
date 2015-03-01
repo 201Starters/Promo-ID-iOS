@@ -7,11 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+@import CoreLocation;
 
 @interface Venue : NSObject
 @property (nonatomic, strong) NSString *name; // name of venue
 @property (nonatomic, strong) NSString *location; // location of venue
 @property (nonatomic, strong) NSString *image; // image filename of venue
 @property (nonatomic, strong) NSString *map; // map image of venue
+@property (nonatomic, strong) CLLocation *latlong; // map image of venue
 @property (nonatomic, strong) NSArray *store; //store in the venue
 @end

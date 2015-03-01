@@ -1005,8 +1005,8 @@
         <image name="second" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="DIL-IB-tzw"/>
-        <segue reference="mbE-dk-m0R"/>
         <segue reference="BKH-o4-1Jy"/>
+        <segue reference="eKA-mE-Ivf"/>
+        <segue reference="DIL-IB-tzw"/>
     </inferredMetricsTieBreakers>
 </document>
